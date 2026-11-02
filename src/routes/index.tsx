@@ -21,7 +21,7 @@ export const Route = createFileRoute("/")({
 });
 
 function Logo() {
-  return <img src={logo} alt="Aspect IT Limited" className="h-16 w-auto" />;
+  return <img src={logo} alt="Aspect IT Limited" className="h-14 w-auto shrink-0" />;
 }
 
 const services = [
@@ -38,13 +38,13 @@ function Index() {
       <header className="mx-auto flex max-w-7xl items-center justify-between px-8 py-4">
         <div className="flex items-center gap-6">
           <Logo />
-          <span className="hidden border-l border-border pl-6 text-sm text-muted-foreground lg:block">Business IT Support &amp; Services</span>
+          <span className="hidden whitespace-nowrap border-l border-border pl-6 text-sm text-muted-foreground xl:block">Business IT Support &amp; Services</span>
         </div>
         <div className="flex flex-col items-end gap-2">
           <div className="flex gap-3 text-foreground">
             {[Facebook, Instagram, Twitter, Youtube, Linkedin].map((I, i) => <I key={i} className="h-4 w-4" />)}
           </div>
-          <nav className="flex items-center gap-8 text-sm font-semibold uppercase">
+          <nav className="flex items-center gap-7 whitespace-nowrap text-sm font-semibold uppercase">
             <a className="border-b-2 border-primary pb-1">Home</a>
             <a className="flex items-center gap-1">Services <ChevronDown className="h-4 w-4" /></a>
             <a className="flex items-center gap-1">About Us <ChevronDown className="h-4 w-4" /></a>
@@ -58,13 +58,13 @@ function Index() {
       <section className="relative overflow-hidden">
         <img src={hero} alt="Laptop and headset on office desk" width={1600} height={912} className="absolute inset-y-0 right-0 h-full w-[70%] object-cover" />
         <div className="absolute inset-0 bg-gradient-to-r from-background via-background/80 to-transparent" />
-        <svg viewBox="0 0 1200 120" className="pointer-events-none absolute bottom-10 left-0 h-28 w-[75%] fill-muted-foreground/25" preserveAspectRatio="none" aria-hidden><path d="M0 120V90h20V60h12v30h18V75h25v45h10V70h8V40h6v30h10v50h30V85h20v35h40V95h15V60h4V30h4v30h6v60h30V80h18v-30h10v30h14v40h20V70h6V20h8v50h10v50h20V60h10V35h12v25h12v60h30V50h20v70h40V75h4a35 35 0 0 1 70 0h4v45h30V60h6V40h6v20h8v60h40c40-40 120-40 160 0h40V95h30v25h80V100h40v20Z"/></svg>
+        <svg viewBox="0 0 1200 120" className="pointer-events-none absolute bottom-10 left-0 h-28 w-[75%] fill-muted-foreground/15" preserveAspectRatio="none" aria-hidden><path d="M0 120V90h20V60h12v30h18V75h25v45h10V70h8V40h6v30h10v50h30V85h20v35h40V95h15V60h4V30h4v30h6v60h30V80h18v-30h10v30h14v40h20V70h6V20h8v50h10v50h20V60h10V35h12v25h12v60h30V50h20v70h40V75h4a35 35 0 0 1 70 0h4v45h30V60h6V40h6v20h8v60h40c40-40 120-40 160 0h40V95h30v25h80V100h40v20Z"/></svg>
         <div className="relative mx-auto max-w-7xl px-8 pb-32 pt-14">
           <div className="flex items-center gap-6 text-sm font-bold tracking-[0.2em] text-primary">
             IT SUPPORT &amp; MANAGED SERVICES <span className="h-px w-28 bg-primary" />
           </div>
           <h1 className="mt-6 max-w-5xl text-5xl font-extrabold leading-tight text-navy">
-            We are the IT support company for <span className="text-primary">Greater Manchester</span> and <span className="text-primary">West Yorkshire</span>
+            We are the IT support company for<br /><span className="text-primary">Greater Manchester</span> and<br /><span className="text-primary">West Yorkshire</span>
           </h1>
           <p className="mt-6 max-w-2xl text-xl text-foreground">On-site and remote IT support and services for small and large organisations across Greater Manchester, and West Yorkshire.</p>
           <p className="mt-4 max-w-2xl text-xl text-foreground">We cover Oldham, Bury, Bolton Rochdale, Manchester, Tameside, Salford, Stockport, Huddersfield, Holmfirth and more.</p>
