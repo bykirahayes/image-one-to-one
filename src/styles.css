@@ -145,3 +145,15 @@
     color: var(--color-foreground);
   }
 }
+
+@keyframes fade-up { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: none; } }
+@keyframes fade-in { from { opacity: 0; } to { opacity: 1; } }
+@keyframes slide-left { from { opacity: 0; transform: translateX(60px) scale(1.05); } to { opacity: 1; transform: none; } }
+@keyframes swoosh { from { opacity: 0; transform: translateX(-40px); } to { opacity: 1; transform: none; } }
+@keyframes float-y { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
+@utility anim-fade-up { animation: fade-up .8s cubic-bezier(.2,.7,.2,1) both; }
+@utility anim-fade-in { animation: fade-in 1.2s ease both; }
+@utility anim-slide-left { animation: slide-left 1.2s cubic-bezier(.2,.7,.2,1) both; }
+@utility anim-swoosh { animation: swoosh 1s cubic-bezier(.2,.7,.2,1) both; }
+@utility anim-float { animation: float-y 3s ease-in-out infinite; }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } }
