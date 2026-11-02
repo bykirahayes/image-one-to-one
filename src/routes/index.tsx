@@ -25,7 +25,7 @@ function Logo() {
     <div className="flex items-end gap-1">
       <div className="leading-none">
         <div className="text-5xl font-medium tracking-tight text-primary">aspect</div>
-        <div className="ml-16 -mt-1 bg-primary px-2 text-[10px] font-bold tracking-[0.2em] text-primary-foreground">IT LIMITED</div>
+        <div className="ml-16 mt-1 bg-primary px-2 text-[10px] font-bold tracking-[0.2em] text-primary-foreground">IT LIMITED</div>
       </div>
       <div className="mb-1 grid grid-cols-4 gap-[3px]">
         {dots.map((d, i) => <span key={i} className={`h-2.5 w-2.5 ${d ? "bg-primary" : ""}`} />)}
@@ -72,7 +72,7 @@ function Index() {
           <div className="flex items-center gap-6 text-sm font-bold tracking-[0.2em] text-primary">
             IT SUPPORT &amp; MANAGED SERVICES <span className="h-px w-28 bg-primary" />
           </div>
-          <h1 className="mt-6 max-w-3xl text-5xl font-extrabold leading-tight text-navy">
+          <h1 className="mt-6 max-w-5xl text-5xl font-extrabold leading-tight text-navy">
             We are the IT support company for <span className="text-primary">Greater Manchester</span> and <span className="text-primary">West Yorkshire</span>
           </h1>
           <p className="mt-6 max-w-2xl text-xl text-foreground">On-site and remote IT support and services for small and large organisations across Greater Manchester, and West Yorkshire.</p>
