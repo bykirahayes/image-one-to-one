@@ -1,11 +1,12 @@
 import { createFileRoute } from "@tanstack/react-router";
 import {
-  Headset, ShieldCheck, Cloud, PhoneCall, Megaphone, Phone, ArrowRight, Mail, ChevronDown,
+  Headset, ShieldCheck, Cloud, PhoneCall, Megaphone, ArrowRight, Mail,
   Facebook, Instagram, Twitter, Youtube, Linkedin,
 } from "lucide-react";
 import hero from "@/assets/hero-laptop-logo.jpg";
 import skyline from "@/assets/skyline.png";
 import logo from "@/assets/aspect-logo.png";
+import { HeaderNavigation } from "@/components/header-navigation";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -36,7 +37,7 @@ const services = [
 function Index() {
   return (
     <div className="min-h-screen bg-background font-sans">
-      <header className="anim-fade-in mx-auto flex max-w-7xl items-center justify-between px-8 py-4">
+      <header className="anim-fade-in relative z-30 mx-auto flex max-w-7xl items-center justify-between px-8 py-4">
         <div className="flex items-center gap-6">
           <Logo />
           <span className="hidden whitespace-nowrap border-l border-border pl-6 text-sm text-muted-foreground xl:block">Business IT Support &amp; Services</span>
@@ -45,14 +46,7 @@ function Index() {
           <div className="flex gap-3 text-foreground">
             {[Facebook, Instagram, Twitter, Youtube, Linkedin].map((I, i) => <I key={i} className="h-4 w-4" />)}
           </div>
-          <nav className="flex items-center gap-7 whitespace-nowrap text-sm font-semibold uppercase">
-            <a className="border-b-2 border-primary pb-1">Home</a>
-            <a className="flex cursor-pointer items-center gap-1 transition-colors hover:text-primary">Services <ChevronDown className="h-4 w-4" /></a>
-            <a className="flex cursor-pointer items-center gap-1 transition-colors hover:text-primary">About Us <ChevronDown className="h-4 w-4" /></a>
-            <a className="cursor-pointer transition-colors hover:text-primary">Case Studies</a>
-            <a className="cursor-pointer transition-colors hover:text-primary">Blog</a>
-            <a className="flex cursor-pointer items-center gap-2 rounded-full bg-primary transition-transform hover:scale-105 px-6 py-2.5 text-primary-foreground"><Phone className="h-4 w-4" /> Contact Us</a>
-          </nav>
+          <HeaderNavigation />
         </div>
       </header>
 

@@ -64,6 +64,7 @@
 }
 
 :root {
+  --shadow-menu: 0 2px 8px oklch(0.22 0.04 260 / 12%);
   --navy: oklch(0.24 0.05 258);
   --radius: 0.625rem;
   --background: oklch(1 0 0);
@@ -101,6 +102,7 @@
 }
 
 .dark {
+  --shadow-menu: 0 2px 8px oklch(0 0 0 / 30%);
   --background: oklch(0.129 0.042 264.695);
   --foreground: oklch(0.984 0.003 247.858);
   --card: oklch(0.208 0.042 265.755);
@@ -156,4 +158,79 @@
 @utility anim-slide-left { animation: slide-left 1.2s cubic-bezier(.2,.7,.2,1) both; }
 @utility anim-swoosh { animation: swoosh 1s cubic-bezier(.2,.7,.2,1) both; }
 @utility anim-float { animation: float-y 3s ease-in-out infinite; }
+.aspect-navigation { position: static !important; }
+.aspect-navigation > div { position: static !important; }
+.aspect-menu-trigger {
+  height: auto;
+  padding: 0;
+  border-radius: 0;
+  background: transparent;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.aspect-menu-trigger:hover,
+.aspect-menu-trigger:focus,
+.aspect-menu-trigger[data-state="open"] {
+  background: transparent;
+  color: var(--primary);
+}
+.aspect-dropdown {
+  position: absolute;
+  z-index: 40;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--background);
+  color: var(--foreground);
+  box-shadow: var(--shadow-menu);
+  text-transform: none;
+  white-space: normal;
+  font-weight: 400;
+  animation: fade-up .18s ease both;
+}
+.aspect-services-dropdown {
+  top: calc(100% - 2px);
+  left: 32px;
+  right: 32px;
+  display: grid;
+  grid-template-columns: 155px minmax(0, 1fr);
+  padding: 30px;
+}
+.aspect-services-sidebar {
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid var(--border);
+  padding: 20px 24px 0 0;
+}
+.aspect-services-groups {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 28px 20px;
+  padding: 20px 8px 0 20px;
+}
+.aspect-menu-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 0;
+  font-size: 16px;
+  line-height: 1.5;
+  cursor: pointer;
+  transition: color .15s ease;
+}
+.aspect-services-sidebar .aspect-menu-link { font-size: 20px; padding: 0; }
+.aspect-menu-link:hover,
+.aspect-menu-link:focus-visible { color: var(--primary); outline: none; }
+.aspect-menu-link:focus-visible { box-shadow: 0 2px 0 var(--primary); }
+.aspect-about-dropdown {
+  top: calc(100% + 20px);
+  left: -20px;
+  width: 258px;
+  padding: 20px;
+}
+.aspect-about-dropdown .aspect-menu-link { padding: 9px 0; }
+@media (max-width: 900px) {
+  .aspect-navigation > ul { gap: 14px; }
+  .aspect-services-dropdown { left: 16px; right: 16px; padding: 20px; grid-template-columns: 125px minmax(0, 1fr); }
+  .aspect-services-groups { grid-template-columns: repeat(2, minmax(0, 1fr)); max-height: 65vh; overflow-y: auto; }
+}
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } }
