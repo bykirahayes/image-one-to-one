@@ -72,14 +72,16 @@ function Index() {
         </div>
       </section>
 
-      <section className="relative -mt-20 bg-navy">
+      <section aria-label="Our services" className="service-strip relative -mt-20 bg-navy">
         <svg viewBox="0 0 1440 80" className="absolute -top-[79px] left-0 h-20 w-full fill-navy" preserveAspectRatio="none" aria-hidden><path d="M0 40C300 0 600 10 900 30S1300 60 1440 20V80H0Z"/></svg>
-        <div className="mx-auto grid max-w-7xl grid-cols-5 divide-x divide-primary-foreground/10 px-8 pb-12 pt-4">
+        <div className="service-strip-grid mx-auto max-w-7xl">
           {services.map(({ icon: I, label }, i) => (
-            <div key={label} style={{ animationDelay: `${900 + i * 120}ms` }} className="anim-fade-up group flex cursor-pointer flex-col items-center gap-4">
-              <I className={`h-16 w-16 transition-transform duration-300 group-hover:-translate-y-2 group-hover:scale-110 ${label === "IT Services" ? "text-primary" : "text-primary-foreground"}`} strokeWidth={1.75} />
-              <span className="text-lg font-bold uppercase text-primary-foreground">{label}</span>
-              <span className="h-0.5 w-14 bg-primary transition-all duration-300 group-hover:w-24" />
+            <div key={label} style={{ animationDelay: `${900 + i * 120}ms` }} className="service-strip-item anim-fade-up group">
+              <div className="service-strip-icon">
+                <I className={`h-14 w-14 transition-transform duration-300 group-hover:-translate-y-1 ${label === "IT Services" ? "text-primary" : "text-primary-foreground"}`} strokeWidth={1.5} aria-hidden="true" />
+              </div>
+              <span className="service-strip-label text-primary-foreground">{label}</span>
+              <span className="service-strip-accent bg-primary" aria-hidden="true" />
             </div>
           ))}
         </div>
