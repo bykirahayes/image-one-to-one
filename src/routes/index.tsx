@@ -58,14 +58,18 @@ function Index() {
         <img src={hero} alt="Laptop and headset on office desk" width={1600} height={912} className="anim-slide-left absolute inset-y-0 right-0 hidden h-full w-[70%] object-cover lg:block" />
         <div className="absolute inset-0 hidden bg-gradient-to-r from-background via-background/80 to-transparent lg:block" />
         <img src={skyline} alt="" width={1920} height={640} className="pointer-events-none absolute bottom-8 left-0 hidden w-[70%] max-h-48 object-cover object-bottom opacity-20 anim-fade-in lg:block" style={{ animationDelay: "600ms" }} />
-        <svg viewBox="0 0 400 200" className="anim-swoosh pointer-events-none absolute left-0 top-0 h-24 w-40 fill-primary sm:h-32 sm:w-64 lg:h-48 lg:w-96" preserveAspectRatio="none" aria-hidden><path d="M0 0h260C150 10 60 60 0 140Z" opacity=".9"/><path d="M0 0h300C180 20 80 80 0 180V140C60 70 150 20 260 0Z" opacity=".25"/></svg>
+        <svg viewBox="0 0 400 200" className="anim-swoosh pointer-events-none absolute left-0 top-0 h-14 w-24 fill-primary sm:h-32 sm:w-64 lg:h-48 lg:w-96" preserveAspectRatio="none" aria-hidden><path d="M0 0h260C150 10 60 60 0 140Z" opacity=".9"/><path d="M0 0h300C180 20 80 80 0 180V140C60 70 150 20 260 0Z" opacity=".25"/></svg>
         <svg viewBox="0 0 600 200" style={{ animationDelay: "400ms" }} className="anim-swoosh pointer-events-none absolute bottom-16 right-0 h-20 w-[55%] fill-primary sm:h-28 lg:h-40 lg:w-[45%]" preserveAspectRatio="none" aria-hidden><path d="M600 20v180H120C300 170 470 110 600 20Z"/><path d="M600 0v20C470 110 300 170 120 200H60C260 180 450 110 600 0Z" opacity=".35"/></svg>
-        <div className="relative mx-auto max-w-7xl px-5 pb-14 pt-8 sm:px-8 sm:pb-20 lg:pb-40 lg:pt-14">
+        <div className="relative mx-auto max-w-7xl px-5 pb-14 pt-16 sm:px-8 sm:pb-20 sm:pt-8 lg:pb-40 lg:pt-14">
           <div style={{ animationDelay: "150ms" }} className="anim-fade-up flex items-center gap-3 text-[11px] font-bold tracking-[0.18em] text-primary sm:gap-6 sm:text-sm sm:tracking-[0.2em]">
             IT SUPPORT &amp; MANAGED SERVICES <span className="h-px w-12 bg-primary sm:w-28" />
           </div>
           <h1 style={{ animationDelay: "300ms" }} className="anim-fade-up mt-4 max-w-5xl text-[28px] font-extrabold leading-[1.15] text-navy sm:mt-6 sm:text-4xl lg:text-5xl lg:leading-tight">
-            We are the IT support company for<br className="hidden lg:inline" /><span className="text-primary">Greater Manchester</span> and<br className="hidden lg:inline" /><span className="text-primary">West Yorkshire</span>
+            We are the IT support company for{" "}
+            <br className="hidden lg:inline" />
+            <span className="text-primary">Greater Manchester</span> and{" "}
+            <br className="hidden lg:inline" />
+            <span className="text-primary">West Yorkshire</span>
           </h1>
           <p style={{ animationDelay: "450ms" }} className="anim-fade-up mt-4 max-w-2xl text-base text-foreground sm:mt-6 sm:text-xl">On-site and remote IT support and services for small and large organisations across Greater Manchester, and West Yorkshire.</p>
           <p style={{ animationDelay: "550ms" }} className="anim-fade-up mt-3 max-w-2xl text-base text-foreground sm:mt-4 sm:text-xl">We cover Oldham, Bury, Bolton Rochdale, Manchester, Tameside, Salford, Stockport, Huddersfield, Holmfirth and more.</p>
