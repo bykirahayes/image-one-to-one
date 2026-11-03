@@ -8,3 +8,5 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+
+- Header dropdowns use Radix Navigation Menu with inline content anchored to the header or trigger, preserving accessible hover, click and keyboard behavior without a shared viewport.
