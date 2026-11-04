@@ -75,7 +75,7 @@ function Index() {
           <p style={{ animationDelay: "550ms" }} className="anim-fade-up mt-3 max-w-2xl text-base text-foreground sm:mt-4 sm:text-xl">We cover Oldham, Bury, Bolton Rochdale, Manchester, Tameside, Salford, Stockport, Huddersfield, Holmfirth and more.</p>
           <div style={{ animationDelay: "700ms" }} className="anim-fade-up mt-7 flex flex-col gap-4 sm:mt-8 sm:flex-row sm:gap-6">
             <a className="flex cursor-pointer items-center justify-center gap-3 group rounded-full bg-primary px-8 py-3.5 font-semibold text-primary-foreground shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl sm:px-10"><Headset className="h-5 w-5" /> Our Services <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" /></a>
-            <a className="flex cursor-pointer items-center justify-center gap-3 rounded-full border-2 border-navy px-8 py-3.5 font-semibold text-navy transition-all duration-300 hover:-translate-y-1 hover:bg-navy hover:text-primary-foreground sm:px-10"><Mail className="h-5 w-5" /> Get in Touch</a>
+            <a className="flex cursor-pointer items-center justify-center gap-3 rounded-full border-2 border-navy bg-background px-8 py-3.5 font-semibold text-navy transition-all duration-300 hover:-translate-y-1 hover:bg-navy hover:text-primary-foreground sm:px-10"><Mail className="h-5 w-5" /> Get in Touch</a>
           </div>
         </div>
         <div className="relative lg:hidden">
