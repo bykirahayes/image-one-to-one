@@ -39,11 +39,11 @@ function Index() {
   return (
     <div className="min-h-screen overflow-x-hidden bg-background font-sans">
       <header className="anim-fade-in relative z-30 mx-auto grid max-w-7xl grid-cols-[minmax(0,1fr)_auto] items-center gap-3 px-5 py-3 sm:px-8 lg:flex lg:justify-between lg:gap-6 lg:py-4">
-        <div className="flex min-w-0 items-center gap-6">
+        <div className="flex min-w-0 shrink items-center gap-6">
           <Logo />
-          <span className="hidden whitespace-nowrap border-l border-border pl-6 text-sm text-muted-foreground xl:block">Business IT Support &amp; Services</span>
+          <span className="hidden min-w-0 truncate border-l border-border pl-6 text-sm text-muted-foreground xl:block">Business IT Support &amp; Services</span>
         </div>
-        <div className="flex min-w-0 flex-col items-end gap-2 lg:flex-row lg:items-center">
+        <div className="flex shrink-0 flex-col items-end gap-2 lg:gap-3">
           <div className="hidden gap-3 text-foreground lg:flex">
             {socialIcons.map((I, i) => <I key={i} className="h-4 w-4" />)}
           </div>
