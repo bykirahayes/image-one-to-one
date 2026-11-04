@@ -38,7 +38,7 @@ const services = [
 function Index() {
   return (
     <div className="min-h-screen overflow-x-hidden bg-background font-sans">
-      <header className="anim-fade-in relative z-30 mx-auto grid max-w-7xl grid-cols-[minmax(0,1fr)_auto] items-center gap-3 px-5 py-3 sm:px-8 lg:flex lg:justify-between lg:gap-6 lg:py-4">
+      <header className="anim-fade-in relative z-30 grid w-full grid-cols-[minmax(0,1fr)_auto] items-center gap-3 px-5 py-3 sm:px-8 lg:flex lg:justify-between lg:gap-6 lg:py-4">
         <div className="flex min-w-0 shrink items-center gap-6">
           <Logo />
           <span className="hidden min-w-0 truncate border-l border-border pl-6 text-sm text-muted-foreground xl:block">Business IT Support &amp; Services</span>
