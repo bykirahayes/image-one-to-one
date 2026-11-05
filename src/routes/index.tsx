@@ -142,36 +142,55 @@ function Index() {
         </div>
       </section>
 
-      <section className="contact-panels px-3 pb-16 sm:px-6 sm:pb-24">
-        <div className="mx-auto grid max-w-[1500px] gap-5 lg:grid-cols-2">
-          <div className="relative isolate flex min-h-[440px] flex-col items-center justify-center overflow-hidden rounded-tl-[3rem] rounded-br-[3rem] bg-[#e9e9e9] px-7 py-12 text-center sm:px-12">
-            <span aria-hidden="true" className="pointer-events-none absolute -right-12 -top-12 h-48 w-48 rounded-full border-[22px] border-primary/10" />
-            <MonitorCog className="h-14 w-14 text-primary" />
-            <h2 className="mt-5 max-w-lg text-4xl font-extrabold uppercase leading-tight text-primary sm:text-5xl">Personalised<br />IT support</h2>
-            <p className="mt-6 max-w-xl text-lg leading-8 text-slate-700 sm:text-xl">
+      <section className="contact-panels relative isolate overflow-hidden bg-white px-4 py-16 sm:px-6 sm:py-20 lg:py-24">
+        <svg aria-hidden="true" viewBox="0 0 1600 120" preserveAspectRatio="none" className="pointer-events-none absolute left-0 top-0 h-16 w-full sm:h-20">
+          <path d="M0 40 C420 0 760 12 1050 48 S1420 82 1600 18" fill="none" stroke="#e5a0a8" strokeWidth="2" opacity=".55" />
+          <path d="M0 58 C430 18 760 30 1050 66 S1420 100 1600 36" fill="none" stroke="#b20d26" strokeWidth="5" />
+        </svg>
+        <div className="relative mx-auto grid max-w-[1500px] items-stretch gap-5 lg:grid-cols-[.95fr_1.05fr] lg:gap-6">
+          <div className="contact-feature-panel relative isolate flex min-h-[430px] flex-col items-center justify-center overflow-hidden rounded-[2rem] border border-slate-200 bg-[#f3f4f6] px-7 py-12 text-center sm:px-12">
+            <MonitorCog className="h-14 w-14 text-primary" strokeWidth={1.8} />
+            <h2 className="mt-5 max-w-lg text-4xl font-extrabold uppercase leading-[1.12] tracking-tight text-[#20283a] sm:text-5xl">
+              Personalised<br />IT <span className="text-primary">support</span>
+            </h2>
+            <p className="mt-6 max-w-xl text-base leading-7 text-slate-600 sm:text-lg sm:leading-8">
               We don’t offer one-size-fits-all packages. Our experts take time to understand your business, goals and workflows — delivering IT support that fits you perfectly.
             </p>
-            <Link to="/contact" className="mt-7 inline-flex items-center gap-2 rounded-full bg-primary px-7 py-3.5 text-sm font-bold uppercase text-white transition hover:scale-[1.03]">
+            <Link to="/contact" className="mt-8 inline-flex items-center gap-3 rounded-full bg-primary px-8 py-4 text-sm font-bold uppercase text-white shadow-sm transition hover:-translate-y-0.5 hover:shadow-lg">
               Tell us what you need <ArrowRight className="h-4 w-4" />
             </Link>
+            <svg aria-hidden="true" viewBox="0 0 500 90" preserveAspectRatio="none" className="pointer-events-none absolute bottom-0 left-0 h-16 w-[72%]">
+              <path d="M0 0 C100 50 235 80 500 90 H0Z" fill="#b20d26" />
+              <path d="M0 0 C110 44 250 70 500 82" fill="none" stroke="#ed3048" strokeWidth="7" />
+            </svg>
           </div>
-          <div id="get-in-touch" className="relative isolate overflow-hidden rounded-tl-[3rem] rounded-br-[3rem] bg-[#e9e9e9] px-6 py-10 sm:px-10 sm:py-12">
-            <span aria-hidden="true" className="pointer-events-none absolute -bottom-16 -left-12 h-48 w-48 rounded-full border-[22px] border-primary/10" />
-            <h2 className="text-center text-4xl font-extrabold uppercase text-primary sm:text-5xl">Get in touch</h2>
+
+          <div id="get-in-touch" className="contact-form-panel rounded-[2rem] border border-slate-200 bg-white px-6 py-10 shadow-[0_12px_36px_rgba(25,35,55,0.07)] sm:px-9 sm:py-11 lg:px-10">
+            <h2 className="text-center text-4xl font-extrabold uppercase tracking-tight text-[#20283a] sm:text-5xl">
+              Get <span className="text-primary">in touch</span>
+            </h2>
             <p className="mx-auto mt-3 max-w-xl text-center text-sm leading-6 text-slate-600 sm:text-base">
               Tell us a little about your business and what you’re looking for. We’ll be happy to talk it through.
             </p>
-            <form action="mailto:info@aspectit.co.uk" method="post" encType="text/plain" className="mx-auto mt-6 flex max-w-2xl flex-col gap-3">
-              <input required name="Name" aria-label="Your name" placeholder="Your Name (required)" className="rounded-full border border-[#ccc] bg-transparent px-4 py-3 text-sm outline-none focus:border-primary" />
-              <input required name="Company" aria-label="Your company name" placeholder="Your Company Name (required)" className="rounded-full border border-[#ccc] bg-transparent px-4 py-3 text-sm outline-none focus:border-primary" />
-              <input required type="email" name="Email" aria-label="Your email" placeholder="Your Email (required)" className="rounded-full border border-[#ccc] bg-transparent px-4 py-3 text-sm outline-none focus:border-primary" />
-              <input required type="tel" name="Telephone" aria-label="Your telephone number" placeholder="Your Telephone Number (required)" className="rounded-full border border-[#ccc] bg-transparent px-4 py-3 text-sm outline-none focus:border-primary" />
-              <textarea required name="Message" aria-label="Your message" rows={4} placeholder="Your Message (required)" className="rounded-2xl border border-[#ccc] bg-transparent px-4 py-3 text-sm outline-none focus:border-primary" />
-              <button type="submit" className="mx-auto mt-1 rounded-full bg-primary px-8 py-3 text-sm font-bold uppercase text-white transition hover:scale-105">Submit</button>
+            <form action="mailto:info@aspectit.co.uk" method="post" encType="text/plain" className="mx-auto mt-7 grid max-w-3xl grid-cols-1 gap-3.5 sm:grid-cols-2">
+              <input required name="Name" aria-label="Your name" placeholder="Your Name (required)" className="min-w-0 rounded-full border border-slate-200 bg-[#f5f6f8] px-5 py-3.5 text-sm text-[#20283a] outline-none transition placeholder:text-slate-500 focus:border-primary focus:bg-white focus:ring-2 focus:ring-primary/10" />
+              <input required name="Company" aria-label="Your company name" placeholder="Your Company Name (required)" className="min-w-0 rounded-full border border-slate-200 bg-[#f5f6f8] px-5 py-3.5 text-sm text-[#20283a] outline-none transition placeholder:text-slate-500 focus:border-primary focus:bg-white focus:ring-2 focus:ring-primary/10" />
+              <input required type="email" name="Email" aria-label="Your email" placeholder="Your Email (required)" className="min-w-0 rounded-full border border-slate-200 bg-[#f5f6f8] px-5 py-3.5 text-sm text-[#20283a] outline-none transition placeholder:text-slate-500 focus:border-primary focus:bg-white focus:ring-2 focus:ring-primary/10" />
+              <input required type="tel" name="Telephone" aria-label="Your telephone number" placeholder="Your Telephone Number (required)" className="min-w-0 rounded-full border border-slate-200 bg-[#f5f6f8] px-5 py-3.5 text-sm text-[#20283a] outline-none transition placeholder:text-slate-500 focus:border-primary focus:bg-white focus:ring-2 focus:ring-primary/10" />
+              <textarea required name="Message" aria-label="Your message" rows={4} placeholder="Your Message (required)" className="min-w-0 rounded-[1.25rem] border border-slate-200 bg-[#f5f6f8] px-5 py-4 text-sm text-[#20283a] outline-none transition placeholder:text-slate-500 focus:border-primary focus:bg-white focus:ring-2 focus:ring-primary/10 sm:col-span-2" />
+              <div className="flex flex-col items-center sm:col-span-2">
+                <button type="submit" className="mt-1 inline-flex items-center gap-3 rounded-full bg-primary px-10 py-3.5 text-sm font-bold uppercase text-white shadow-sm transition hover:-translate-y-0.5 hover:shadow-lg">
+                  Submit <ArrowRight className="h-4 w-4" />
+                </button>
+                <p className="mt-4 text-center text-xs text-slate-500">Submitting opens your email application to send your enquiry.</p>
+              </div>
             </form>
-            <p className="mt-4 text-center text-xs text-slate-500">Submitting opens your email application to send your enquiry.</p>
           </div>
         </div>
+        <svg aria-hidden="true" viewBox="0 0 1600 120" preserveAspectRatio="none" className="pointer-events-none absolute bottom-0 left-0 h-14 w-full sm:h-20">
+          <path d="M0 95 C400 120 800 90 1100 62 S1450 28 1600 48" fill="none" stroke="#e5a0a8" strokeWidth="2" opacity=".5" />
+          <path d="M0 112 C400 137 800 107 1100 79 S1450 45 1600 65" fill="none" stroke="#b20d26" strokeWidth="4" />
+        </svg>
       </section>
 
       <section className="partners-section relative isolate overflow-hidden bg-white px-5 py-20 sm:px-8 sm:py-24">
