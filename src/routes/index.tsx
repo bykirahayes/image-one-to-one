@@ -331,7 +331,7 @@ function Index() {
               <BriefcaseBusiness className="pointer-events-none absolute right-8 top-28 h-28 w-28 text-white/[0.09]" strokeWidth={1.1} />
             </div>
             <div className="relative isolate min-h-[440px] overflow-hidden rounded-[2rem] bg-[#f5f6f8] shadow-[0_18px_50px_rgba(35,45,65,0.10)]">
-              <div className="relative z-10 flex h-full min-h-[440px] flex-col justify-center px-7 py-10 sm:px-10 lg:w-[67%] lg:py-12">
+              <div className="relative z-10 flex h-full min-h-[440px] flex-col justify-center px-7 py-10 sm:px-10 lg:w-[62%] lg:py-12">
                 <p className="text-xs font-bold uppercase tracking-[.2em] text-primary">The Aspect IT approach</p>
                 <h3 className="mt-5 text-3xl font-extrabold uppercase leading-[1.12] text-[#17233f] sm:text-4xl">
                   Straightforward support. <span className="text-primary">Long-term partnerships.</span>
@@ -343,8 +343,8 @@ function Index() {
                   About Aspect IT <ArrowRight className="h-4 w-4" />
                 </Link>
               </div>
-              <div className="absolute inset-y-0 right-0 hidden w-[42%] lg:block">
-                <img src={hero} alt="Aspect IT branded laptop and headset in an office" className="h-full w-full object-cover object-center" />
+              <div className="absolute inset-y-0 right-0 hidden w-[55%] lg:block">
+                <img src={hero} alt="Aspect IT branded laptop and headset in an office" className="h-full w-full object-cover object-[58%_center]" />
                 <svg aria-hidden="true" viewBox="0 0 240 700" preserveAspectRatio="none" className="absolute inset-y-0 -left-1 h-full w-24">
                   <path d="M240 0C155 120 160 260 125 385C95 500 65 620 0 700H0V0Z" fill="#f5f6f8" />
                   <path d="M240 0C155 120 160 260 125 385C95 500 65 620 0 700" fill="none" stroke="#c10d2b" strokeWidth="10" />
