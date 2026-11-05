@@ -53,7 +53,7 @@ function Index() {
     <div className="min-h-screen overflow-x-hidden bg-white font-sans text-[#25283a]">
       <SiteHeader />
 
-      <section className="relative isolate overflow-hidden">
+      <section className="hero-section relative isolate overflow-hidden">
         <img src={hero} alt="Laptop and headset on an office desk" className="absolute inset-y-0 right-0 -z-20 hidden h-full w-[68%] object-cover lg:block" />
         <div className="absolute inset-0 -z-10 hidden bg-gradient-to-r from-white via-white/95 to-white/10 lg:block" />
         <img src={skyline} alt="" className="pointer-events-none absolute bottom-0 left-0 -z-10 hidden h-36 w-[72%] object-cover object-bottom opacity-25 lg:block" />
@@ -101,7 +101,7 @@ function Index() {
         </svg>
       </section>
 
-      <section aria-label="Our service areas" className="relative bg-[#25283a] text-white">
+      <section aria-label="Our service areas" className="service-ribbon relative bg-[#25283a] text-white">
         <div className="mx-auto grid max-w-7xl grid-cols-2 gap-y-8 px-5 py-10 sm:px-8 md:grid-cols-3 lg:grid-cols-5 lg:py-12">
           {serviceHighlights.map(({ icon: Icon, label, detail }, i) => (
             <Link key={label} to="/services" className="group flex flex-col items-center px-3 text-center">
@@ -114,7 +114,7 @@ function Index() {
         </div>
       </section>
 
-      <section className="relative isolate mx-auto max-w-[1500px] overflow-hidden px-3 py-16 sm:px-6 sm:py-24">
+      <section className="experience-section relative isolate mx-auto max-w-[1500px] overflow-hidden px-3 py-16 sm:px-6 sm:py-24">
         <div aria-hidden="true" className="pointer-events-none absolute -right-20 top-8 hidden h-48 w-[38%] opacity-[.07] lg:block">
           <svg viewBox="0 0 520 180" className="h-full w-full fill-primary"><path d="M520 0 C400 80 280 130 30 180 H0 C240 135 390 70 520 0Z" /><path d="M520 28 C410 100 300 145 110 180 H70 C260 140 410 80 520 28Z" /></svg>
         </div>
@@ -142,7 +142,7 @@ function Index() {
         </div>
       </section>
 
-      <section className="px-3 pb-16 sm:px-6 sm:pb-24">
+      <section className="contact-panels px-3 pb-16 sm:px-6 sm:pb-24">
         <div className="mx-auto grid max-w-[1500px] gap-5 lg:grid-cols-2">
           <div className="relative isolate flex min-h-[440px] flex-col items-center justify-center overflow-hidden rounded-tl-[3rem] rounded-br-[3rem] bg-[#e9e9e9] px-7 py-12 text-center sm:px-12">
             <span aria-hidden="true" className="pointer-events-none absolute -right-12 -top-12 h-48 w-48 rounded-full border-[22px] border-primary/10" />
@@ -207,7 +207,7 @@ function Index() {
         </div>
       </section>
 
-      <section className="px-3 py-10 sm:px-6 sm:py-16">
+      <section className="social-section px-3 py-10 sm:px-6 sm:py-16">
         <div className="mx-auto grid max-w-[1500px] gap-5 lg:grid-cols-2">
           <div className="relative isolate flex min-h-[330px] flex-col items-center justify-center overflow-hidden rounded-tl-[3rem] rounded-br-[3rem] bg-[#e9e9e9] px-8 py-12 text-center">
             <span aria-hidden="true" className="pointer-events-none absolute -left-14 -top-14 h-44 w-44 rounded-full border-[20px] border-primary/10" />
@@ -225,7 +225,7 @@ function Index() {
         </div>
       </section>
 
-      <section className="bg-white px-5 py-16 sm:px-8 sm:py-24">
+      <section className="customer-section bg-white px-5 py-16 sm:px-8 sm:py-24">
         <div className="mx-auto max-w-7xl">
           <div className="mx-auto max-w-4xl text-center">
             <h2 className="text-3xl font-extrabold uppercase text-black sm:text-5xl">See how we support <span className="text-primary">our customers</span></h2>
@@ -260,7 +260,7 @@ function Index() {
         </div>
       </section>
 
-      <section className="bg-[#f5f5f5] px-5 py-16 sm:px-8 sm:py-20">
+      <section className="service-directory bg-[#f5f5f5] px-5 py-16 sm:px-8 sm:py-20">
         <div className="mx-auto max-w-7xl">
           <div className="mx-auto max-w-3xl text-center">
             <h2 className="text-3xl font-extrabold uppercase text-black sm:text-4xl">Find the right <span className="text-primary">IT services</span> for your company</h2>
@@ -282,7 +282,7 @@ function Index() {
         </div>
       </section>
 
-      <section className="px-3 py-10 sm:px-6 sm:py-16">
+      <section className="final-contact px-3 py-10 sm:px-6 sm:py-16">
         <div className="mx-auto grid max-w-[1500px] gap-5 lg:grid-cols-2">
           <div className="relative isolate flex min-h-[360px] flex-col items-center justify-center overflow-hidden rounded-tl-[3rem] rounded-br-[3rem] bg-[#f0f0f0] px-8 py-12 text-center">
             <Globe2 className="h-14 w-14 text-primary" />
