@@ -208,7 +208,7 @@ function Index() {
       </section>
 
       <section className="social-section relative isolate overflow-hidden px-4 py-16 sm:px-8 sm:py-20 lg:py-24">
-        <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-20 bg-[radial-gradient(ellipse_at_15%_45%,rgba(165,31,42,0.24),transparent_42%),linear-gradient(120deg,#171b30_0%,#25283a_58%,#321b2b_100%)]" />
+        <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-20 bg-[linear-gradient(120deg,#1d2134_0%,#25283a_55%,#25283a_100%)]" />
         <svg aria-hidden="true" viewBox="0 0 1600 260" preserveAspectRatio="none" className="pointer-events-none absolute -top-1 left-0 -z-10 h-24 w-full sm:h-32">
           <path d="M0 0H1600V24C1250 95 1010 100 760 70C470 34 220 42 0 92Z" fill="#fff" />
           <path d="M0 92C280 42 490 38 760 70C1040 104 1290 88 1600 24" fill="none" stroke="#c51e36" strokeWidth="5" opacity=".9" />
@@ -218,7 +218,6 @@ function Index() {
           <path d="M0 45C300 175 610 190 900 125C1190 60 1370 55 1600 105" fill="none" stroke="#ef2947" strokeWidth="7" />
           <path d="M0 112C310 225 620 235 900 180C1190 125 1380 122 1600 165" fill="none" stroke="#f45b70" strokeWidth="2" opacity=".8" />
         </svg>
-        <div className="pointer-events-none absolute bottom-8 left-8 -z-10 hidden select-none text-[10rem] font-black leading-none text-white/[0.035] lg:block">ASPECT</div>
         <div className="relative mx-auto grid max-w-[1400px] items-center gap-8 lg:grid-cols-[0.9fr_1.4fr] lg:gap-12">
           <div className="px-2 py-8 text-center text-white sm:px-8 lg:text-left">
             <p className="inline-flex items-center gap-3 text-xs font-bold uppercase tracking-[.28em] text-[#ff526b] sm:text-sm">
