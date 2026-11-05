@@ -495,3 +495,71 @@
   .partners-eyebrow, .partners-heading, .partner-card, .partners-sweep, .partners-pagination i { animation: none !important; }
   .partners-heading > span::after { animation: none; transform: rotate(-2deg) scaleX(1); }
 }
+
+
+/* Full homepage visual system — sweeping Aspect curves, layered panels and rhythm */
+.hero-section { min-height: 590px; }
+.hero-section::after {
+  content:""; position:absolute; pointer-events:none; z-index:1; left:-8%; right:-8%; bottom:-72px; height:116px;
+  border-top:2px solid oklch(0.58 0.19 25 / 48%); border-radius:50% 48% 0 0 / 32% 38% 0 0;
+  transform:rotate(-1.4deg); box-shadow:0 -9px 0 -7px oklch(0.58 0.19 25 / 22%);
+}
+.service-ribbon { margin-top:-1px; box-shadow:0 16px 35px oklch(0.2 0.04 260 / 12%); }
+.service-ribbon::after {
+  content:""; position:absolute; pointer-events:none; left:-5%; right:-5%; bottom:-34px; height:52px;
+  border-bottom:2px solid oklch(0.58 0.19 25 / 30%); border-radius:0 0 50% 50%;
+}
+.experience-section { padding-top:7rem; padding-bottom:7rem; }
+.experience-section::before {
+  content:""; position:absolute; pointer-events:none; width:38rem; height:13rem; left:-13rem; top:45%;
+  border:2px solid oklch(0.58 0.19 25 / 14%); border-left:0; border-radius:0 55% 55% 0;
+  transform:rotate(-12deg); box-shadow:0 14px 0 -12px oklch(0.58 0.19 25 / 15%),0 28px 0 -25px oklch(0.58 0.19 25 / 12%);
+}
+.experience-section article { border-radius:2.5rem .65rem 2.5rem .65rem; box-shadow:0 12px 28px oklch(0.2 0.04 260 / 12%); }
+.contact-panels > div > div, .social-section > div > div, .final-contact > div > div {
+  box-shadow:0 12px 32px oklch(0.2 0.04 260 / 7%); border:1px solid oklch(0.86 0.015 260 / 65%);
+  transition:transform .35s ease,box-shadow .35s ease;
+}
+.contact-panels > div > div:hover, .final-contact > div > div:hover { transform:translateY(-4px); box-shadow:0 20px 42px oklch(0.2 0.04 260 / 12%); }
+.contact-panels > div > div:first-child, .social-section > div > div:first-child, .final-contact > div > div:first-child {
+  border-radius:3.2rem .7rem 3.2rem .7rem;
+}
+.contact-panels > div > div:last-child, .social-section > div > div:last-child, .final-contact > div > div:last-child {
+  border-radius:.7rem 3.2rem .7rem 3.2rem;
+}
+.partners-section { padding-top:7rem; padding-bottom:7rem; }
+.social-section { position:relative; isolation:isolate; }
+.social-section::before {
+  content:""; position:absolute; z-index:-1; pointer-events:none; left:-8%; right:-8%; top:0; height:120px;
+  border-top:2px solid oklch(0.58 0.19 25 / 20%); border-radius:50%; transform:rotate(1.5deg);
+}
+.social-section > div > div:last-child > div { transition:transform .3s ease; }
+.social-section > div > div:last-child > div:hover { transform:translateY(-5px) scale(1.025); }
+.customer-section { position:relative; isolation:isolate; }
+.customer-section::before {
+  content:""; position:absolute; z-index:-1; inset:0; pointer-events:none;
+  background:radial-gradient(ellipse at 0% 55%,oklch(0.96 0.035 25 / 60%),transparent 45%),radial-gradient(ellipse at 100% 15%,oklch(0.96 0.025 250 / 55%),transparent 42%);
+}
+.customer-section > div > div:last-child > div { border-radius:2.5rem .7rem 2.5rem .7rem; box-shadow:0 16px 36px oklch(0.2 0.04 260 / 10%); }
+.service-directory { position:relative; isolation:isolate; }
+.service-directory::before {
+  content:""; position:absolute; z-index:-1; pointer-events:none; left:-6%; right:-6%; top:-48px; height:92px;
+  background:#f5f5f5; border-radius:50% 50% 0 0 / 70% 70% 0 0; border-top:2px solid oklch(0.58 0.19 25 / 22%);
+}
+.service-directory li { position:relative; padding:.45rem .25rem; border-bottom:1px solid oklch(0.82 0.015 260 / 48%); }
+.service-directory li:last-child { border-bottom:0; }
+.final-contact { position:relative; isolation:isolate; }
+.final-contact::before {
+  content:""; position:absolute; z-index:-1; pointer-events:none; left:-8%; right:-8%; top:-36px; height:90px;
+  border-top:2px solid oklch(0.58 0.19 25 / 25%); border-radius:50%; transform:rotate(-1deg);
+}
+@media(max-width:767px) {
+ .hero-section { min-height:0; }
+ .hero-section::after { bottom:-58px; height:85px; }
+ .experience-section { padding-top:5rem; padding-bottom:5rem; }
+ .partners-section { padding-top:5rem; padding-bottom:5rem; }
+ .service-ribbon::after { bottom:-25px; height:38px; }
+}
+@media(prefers-reduced-motion:reduce) {
+ .contact-panels > div > div,.social-section > div > div,.final-contact > div > div,.social-section > div > div:last-child > div { transition:none; }
+}
