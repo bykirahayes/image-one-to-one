@@ -207,20 +207,57 @@ function Index() {
         </div>
       </section>
 
-      <section className="social-section px-3 py-10 sm:px-6 sm:py-16">
-        <div className="mx-auto grid max-w-[1500px] gap-5 lg:grid-cols-2">
-          <div className="relative isolate flex min-h-[330px] flex-col items-center justify-center overflow-hidden rounded-tl-[3rem] rounded-br-[3rem] bg-[#e9e9e9] px-8 py-12 text-center">
-            <span aria-hidden="true" className="pointer-events-none absolute -left-14 -top-14 h-44 w-44 rounded-full border-[20px] border-primary/10" />
-            <h2 className="text-4xl font-extrabold uppercase leading-tight text-primary sm:text-5xl">Follow us on<br />social media</h2>
-            <p className="mt-6 max-w-lg text-lg leading-8 text-slate-700">Keep up with company news, useful IT advice and the latest technology updates.</p>
+      <section className="social-section relative isolate overflow-hidden px-4 py-16 sm:px-8 sm:py-20 lg:py-24">
+        <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-20 bg-[radial-gradient(ellipse_at_15%_45%,rgba(165,31,42,0.24),transparent_42%),linear-gradient(120deg,#171b30_0%,#25283a_58%,#321b2b_100%)]" />
+        <svg aria-hidden="true" viewBox="0 0 1600 260" preserveAspectRatio="none" className="pointer-events-none absolute -top-1 left-0 -z-10 h-24 w-full sm:h-32">
+          <path d="M0 0H1600V24C1250 95 1010 100 760 70C470 34 220 42 0 92Z" fill="#fff" />
+          <path d="M0 92C280 42 490 38 760 70C1040 104 1290 88 1600 24" fill="none" stroke="#c51e36" strokeWidth="5" opacity=".9" />
+        </svg>
+        <svg aria-hidden="true" viewBox="0 0 1600 240" preserveAspectRatio="none" className="pointer-events-none absolute bottom-0 left-0 -z-10 h-28 w-full sm:h-40">
+          <path d="M0 78C300 210 610 225 900 160C1190 95 1370 90 1600 140V240H0Z" fill="#a51f2a" opacity=".95" />
+          <path d="M0 45C300 175 610 190 900 125C1190 60 1370 55 1600 105" fill="none" stroke="#ef2947" strokeWidth="7" />
+          <path d="M0 112C310 225 620 235 900 180C1190 125 1380 122 1600 165" fill="none" stroke="#f45b70" strokeWidth="2" opacity=".8" />
+        </svg>
+        <div className="pointer-events-none absolute bottom-8 left-8 -z-10 hidden select-none text-[10rem] font-black leading-none text-white/[0.035] lg:block">ASPECT</div>
+        <div className="relative mx-auto grid max-w-[1400px] items-center gap-8 lg:grid-cols-[0.9fr_1.4fr] lg:gap-12">
+          <div className="px-2 py-8 text-center text-white sm:px-8 lg:text-left">
+            <p className="inline-flex items-center gap-3 text-xs font-bold uppercase tracking-[.28em] text-[#ff526b] sm:text-sm">
+              <span className="h-[2px] w-10 bg-[#ff294b]" /> Stay connected
+            </p>
+            <h2 className="mt-6 text-4xl font-extrabold uppercase leading-[1.08] tracking-tight sm:text-5xl xl:text-6xl">
+              Follow us on<br /><span className="text-[#f02c4b]">social media</span>
+            </h2>
+            <p className="mt-6 max-w-xl text-base leading-8 text-white/80 sm:text-lg">
+              Keep up with company news, useful IT advice and the latest technology updates.
+            </p>
+            <div className="mt-8 hidden items-center gap-3 lg:flex">
+              <span className="h-1 w-16 rounded-full bg-[#ed2948]" />
+              <span className="h-1 w-7 rounded-full bg-white/35" />
+              <span className="h-1 w-3 rounded-full bg-white/20" />
+            </div>
           </div>
-          <div className="grid min-h-[330px] grid-cols-2 gap-5 rounded-tl-[3rem] rounded-br-[3rem] bg-[#e9e9e9] p-8 sm:p-10">
-            {[{ name: "LinkedIn", Icon: Linkedin }, { name: "Facebook", Icon: Facebook }, { name: "Instagram", Icon: Instagram }, { name: "X", Icon: Twitter }].map(({ name, Icon }) => (
-              <div key={name} className="flex flex-col items-center justify-center gap-3 text-[#163e70]">
-                <span className="grid h-24 w-24 place-items-center rounded-3xl bg-white shadow-sm sm:h-28 sm:w-28"><Icon className="h-14 w-14 sm:h-16 sm:w-16" /></span>
-                <span className="text-sm font-semibold">{name}</span>
-              </div>
-            ))}
+          <div className="relative rounded-[2rem] border border-white/70 bg-white/95 p-4 shadow-[0_24px_70px_rgba(0,0,0,0.28)] backdrop-blur sm:rounded-[2.5rem] sm:p-6 lg:p-8">
+            <div className="grid gap-3 sm:grid-cols-2 sm:gap-4">
+              {[
+                { name: "LinkedIn", detail: "Company updates and insights", Icon: Linkedin, color: "from-[#0a66c2] to-[#1688e8]", glow: "shadow-[#0a66c2]/20" },
+                { name: "Facebook", detail: "News, updates and company life", Icon: Facebook, color: "from-[#0866ff] to-[#2794ff]", glow: "shadow-[#0866ff]/20" },
+                { name: "Instagram", detail: "Behind the scenes and team updates", Icon: Instagram, color: "from-[#833ab4] via-[#e1306c] to-[#f77737]", glow: "shadow-[#e1306c]/20" },
+                { name: "X", detail: "Latest news and quick updates", Icon: Twitter, color: "from-[#151515] to-[#414141]", glow: "shadow-black/20" },
+              ].map(({ name, detail, Icon, color, glow }) => (
+                <div key={name} className="group flex min-h-[132px] items-center gap-4 rounded-[1.5rem] border border-slate-100 bg-gradient-to-br from-white to-[#f2f4f8] p-4 shadow-[0_8px_24px_rgba(24,38,68,0.08)] transition duration-300 hover:-translate-y-1 hover:shadow-xl sm:gap-5 sm:p-5">
+                  <span className={`grid h-[76px] w-[76px] shrink-0 place-items-center rounded-[1.35rem] bg-gradient-to-br text-white shadow-lg transition duration-300 group-hover:scale-105 sm:h-[88px] sm:w-[88px] ${color} ${glow}`}>
+                    <Icon className="h-10 w-10 sm:h-12 sm:w-12" strokeWidth={2.1} />
+                  </span>
+                  <span className="min-w-0 flex-1">
+                    <span className="block text-base font-extrabold text-[#202438] sm:text-lg">{name}</span>
+                    <span className="mt-1 block text-xs leading-5 text-slate-600 sm:text-sm">{detail}</span>
+                  </span>
+                  <span className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-white text-[#202438] shadow-sm transition group-hover:bg-primary group-hover:text-white">
+                    <ArrowRight className="h-4 w-4" />
+                  </span>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
