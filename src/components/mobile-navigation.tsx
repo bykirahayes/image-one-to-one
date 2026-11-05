@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { Menu, Phone } from "lucide-react";
+import { Link } from "@tanstack/react-router";
+import { slugify } from "@/lib/site-data";
 import {
   Accordion,
   AccordionContent,
@@ -55,13 +57,9 @@ export function MobileNavigation() {
           <Accordion type="single" collapsible className="w-full">
             <AccordionItem value="home" className="border-b border-border">
               <SheetClose asChild>
-                <a
-                  href="/"
-                  aria-current="page"
-                  className="flex items-center justify-between py-4 text-base font-semibold uppercase text-navy"
-                >
+                <Link to="/" className="flex items-center justify-between py-4 text-base font-semibold uppercase text-navy">
                   Home
-                </a>
+                </Link>
               </SheetClose>
             </AccordionItem>
 
@@ -76,11 +74,11 @@ export function MobileNavigation() {
                       <h3 className="mb-1 text-sm font-semibold text-primary">{title}</h3>
                       <ul className="divide-y divide-border/60">
                         {items.map((item) => (
-                          <li key={item}>
+                          <li key={item.slug}>
                             <SheetClose asChild>
-                              <a className="block cursor-pointer py-2 text-[15px] text-foreground">
-                                {item}
-                              </a>
+                              <Link to="/services/$slug" params={{ slug: item.slug }} className="block cursor-pointer py-2 text-[15px] text-foreground">
+                                {item.title}
+                              </Link>
                             </SheetClose>
                           </li>
                         ))}
@@ -90,8 +88,8 @@ export function MobileNavigation() {
                 </div>
                 <div className="mt-5 flex flex-col gap-2 border-t border-border pt-4 text-sm font-semibold uppercase">
                   {sidebarLinks.map((item) => (
-                    <SheetClose key={item} asChild>
-                      <a className="cursor-pointer py-1 text-foreground">{item}</a>
+                    <SheetClose key={item.label} asChild>
+                      <Link to={item.to} className="cursor-pointer py-1 text-foreground">{item.label}</Link>
                     </SheetClose>
                   ))}
                 </div>
@@ -107,9 +105,9 @@ export function MobileNavigation() {
                   {aboutItems.map((item) => (
                     <li key={item}>
                       <SheetClose asChild>
-                        <a className="block cursor-pointer py-2.5 text-[15px] text-foreground">
+                        <Link to="/about" hash={slugify(item)} className="block cursor-pointer py-2.5 text-[15px] text-foreground">
                           {item}
-                        </a>
+                        </Link>
                       </SheetClose>
                     </li>
                   ))}
@@ -118,20 +116,20 @@ export function MobileNavigation() {
             </AccordionItem>
 
             {plainLinks.map((item) => (
-              <AccordionItem key={item} value={item} className="border-b border-border">
+              <AccordionItem key={item.label} value={item.label} className="border-b border-border">
                 <SheetClose asChild>
-                  <a className="flex items-center justify-between py-4 text-base font-semibold uppercase text-navy">
-                    {item}
-                  </a>
+                  <Link to={item.to} className="flex items-center justify-between py-4 text-base font-semibold uppercase text-navy">
+                    {item.label}
+                  </Link>
                 </SheetClose>
               </AccordionItem>
             ))}
           </Accordion>
 
           <SheetClose asChild>
-            <a className="mt-6 flex cursor-pointer items-center justify-center gap-2 rounded-full bg-primary px-6 py-3.5 text-sm font-semibold uppercase text-primary-foreground">
+            <Link to="/contact" className="mt-6 flex cursor-pointer items-center justify-center gap-2 rounded-full bg-primary px-6 py-3.5 text-sm font-semibold uppercase text-primary-foreground">
               <Phone className="h-4 w-4" aria-hidden="true" /> Contact Us
-            </a>
+            </Link>
           </SheetClose>
 
           <div className="mt-6 flex items-center gap-4 text-muted-foreground">

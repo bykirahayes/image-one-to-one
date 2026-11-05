@@ -1,22 +1,11 @@
-import {
-  Facebook,
-  Instagram,
-  Linkedin,
-  Twitter,
-  Youtube,
-  type LucideIcon,
-} from "lucide-react";
+import { Facebook, Instagram, Linkedin, Twitter, Youtube, type LucideIcon } from "lucide-react";
+export { serviceGroups } from "@/lib/site-data";
 
-export const serviceGroups = [
-  { title: "IT Services", items: ["IT Support", "IT Consultancy"] },
-  { title: "Managed Security", items: ["Cyber Security", "Cyber Essentials"] },
-  { title: "Communications", items: ["VoIP", "Internet Lines"] },
-  { title: "Marketing", items: ["Web Design & eCommerce", "Social Media Management"] },
-  { title: "Cloud & Data", items: ["Microsoft 365", "Cloud"] },
-  { title: "Software Development", items: ["Software Development"] },
-];
-
-export const sidebarLinks = ["Latest news", "About us", "Contact"];
+export const sidebarLinks = [
+  { label: "Latest news", to: "/blog" },
+  { label: "About us", to: "/about" },
+  { label: "Contact", to: "/contact" },
+] as const;
 
 export const aboutItems = [
   "Company Details",
@@ -25,12 +14,9 @@ export const aboutItems = [
   "Strategic Partnerships",
 ];
 
-export const plainLinks = ["Case Studies", "Blog"];
+export const plainLinks = [
+  { label: "Case Studies", to: "/case-studies" },
+  { label: "Blog", to: "/blog" },
+] as const;
 
-export const socialIcons: LucideIcon[] = [
-  Facebook,
-  Instagram,
-  Twitter,
-  Youtube,
-  Linkedin,
-];
+export const socialIcons: LucideIcon[] = [Facebook, Instagram, Twitter, Youtube, Linkedin];
