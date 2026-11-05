@@ -11,7 +11,6 @@ import {
 import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
-import { reportLovableError } from "../lib/lovable-error-reporting";
 
 function NotFoundComponent() {
   return (
@@ -39,7 +38,6 @@ function ErrorComponent({ error, reset }: ErrorComponentProps) {
   console.error(error);
   const router = useRouter();
   useEffect(() => {
-    reportLovableError(error, { boundary: "tanstack_root_error_component" });
   }, [error]);
 
   return (
@@ -80,12 +78,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "Aspect IT Limited" },
       { name: "description", content: "Business IT Support & Services" },
-      { name: "author", content: "Lovable" },
+      { name: "author", content: "Aspect IT Limited" },
       { property: "og:title", content: "Aspect IT Limited" },
       { property: "og:description", content: "Business IT Support & Services" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:site", content: "@Lovable" },
+      
     ],
     links: [
       {
