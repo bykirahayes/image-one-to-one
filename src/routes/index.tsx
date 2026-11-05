@@ -79,6 +79,22 @@ function Index() {
             </Link>
           </div>
         </div>
+        <svg
+          viewBox="0 0 1440 110"
+          preserveAspectRatio="none"
+          aria-hidden="true"
+          className="pointer-events-none absolute bottom-[-1px] left-0 z-10 h-14 w-full fill-[#25283a] sm:h-20 lg:h-28"
+        >
+          <path d="M0 58 C210 18 410 8 625 30 C850 54 1040 86 1225 58 C1320 44 1390 23 1440 12 V110 H0 Z" />
+        </svg>
+        <svg
+          viewBox="0 0 600 180"
+          preserveAspectRatio="none"
+          aria-hidden="true"
+          className="pointer-events-none absolute bottom-10 right-0 z-0 hidden h-28 w-[42%] fill-primary opacity-20 lg:block"
+        >
+          <path d="M600 0 C480 80 330 130 80 180 H0 C250 145 440 80 600 0Z" />
+        </svg>
       </section>
 
       <section aria-label="Our service areas" className="relative bg-[#25283a] text-white">
