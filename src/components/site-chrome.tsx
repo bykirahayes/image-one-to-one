@@ -52,9 +52,9 @@ export function SiteFooter() {
         <div>
           <h3 className="font-semibold uppercase">Get in touch</h3>
           <ul className="mt-4 space-y-3 text-sm opacity-80">
-            <li className="flex gap-2"><Phone className="h-4 w-4 shrink-0" /> 0161 000 0000</li>
-            <li className="flex gap-2"><Mail className="h-4 w-4 shrink-0" /> hello@aspect-it.co.uk</li>
-            <li className="flex gap-2"><MapPin className="h-4 w-4 shrink-0" /> Oldham, Greater Manchester</li>
+            <li className="flex gap-2"><Phone className="h-4 w-4 shrink-0" /> 0161 241 9050</li>
+            <li className="flex gap-2"><Mail className="h-4 w-4 shrink-0" /> info@aspectit.co.uk</li>
+            <li className="flex gap-2"><MapPin className="h-4 w-4 shrink-0" /> County End Business Centre, Jackson Street, Springhead, Oldham OL4 4TZ</li>
           </ul>
         </div>
       </div>
