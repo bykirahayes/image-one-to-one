@@ -1,6 +1,6 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { CheckCircle2, ChevronRight, Headset, Laptop, Monitor, ShieldCheck, Wrench, Cloud, Shield, Phone, Wifi, Globe, Share2, Code2, Server, BadgeCheck, ChartNoAxesCombined, ClipboardList, Database, MonitorSmartphone, type LucideIcon } from "lucide-react";
-import { ContactForm, PageHero } from "@/components/site-chrome";
+import { ContactForm } from "@/components/site-chrome";
 import { services } from "@/lib/site-data";
 
 export const Route = createFileRoute("/services/$slug")({
@@ -209,7 +209,7 @@ const serviceHeroContent: Record<string, HeroContent> = {
 function ServiceHero({ service }: { service: (typeof services)[number] }) {
   const content = serviceHeroContent[service.slug];
   const VisualIcon = content?.Icon ?? Monitor;
-  const highlights = content?.highlights ?? service.points.slice(0, 4).map((point, i) => ({
+  const highlights = content?.highlights ?? service.points.slice(0, 4).map((point) => ({
     title: point, detail: "Practical support from the Aspect IT team", Icon: CheckCircle2,
   }));
   return (
