@@ -280,39 +280,83 @@ function Index() {
         </div>
       </section>
 
-      <section className="customer-section bg-white px-5 py-16 sm:px-8 sm:py-24">
-        <div className="mx-auto max-w-7xl">
+      <section className="customer-section relative isolate overflow-hidden bg-white px-5 py-16 sm:px-8 sm:py-24">
+        <svg aria-hidden="true" viewBox="0 0 1600 140" preserveAspectRatio="none" className="pointer-events-none absolute right-0 top-0 h-20 w-1/3">
+          <path d="M1600 0C1510 72 1390 92 1210 76C1370 86 1510 50 1600 20Z" fill="#b20d26" />
+          <path d="M1600 0C1515 48 1410 68 1290 66" fill="none" stroke="#ed3048" strokeWidth="5" />
+        </svg>
+        <div className="relative mx-auto max-w-7xl">
           <div className="mx-auto max-w-4xl text-center">
-            <h2 className="text-3xl font-extrabold uppercase text-black sm:text-5xl">See how we support <span className="text-primary">our customers</span></h2>
-            <p className="mt-5 text-base leading-8 text-slate-700 sm:text-lg">
+            <p className="text-xs font-bold uppercase tracking-[.28em] text-primary">Customer success</p>
+            <h2 className="mt-4 text-3xl font-extrabold uppercase leading-tight text-[#17233f] sm:text-5xl">
+              See how we support <span className="text-primary">our customers</span>
+            </h2>
+            <p className="mx-auto mt-5 max-w-4xl text-base leading-8 text-slate-700 sm:text-lg">
               From day-to-day helpdesk support to security, cloud and communications projects, we focus on making technology work better for your organisation.
             </p>
           </div>
-          <div className="mt-12 grid gap-5 lg:grid-cols-2">
-            <div className="rounded-2xl bg-[#8f2024] p-8 text-white sm:p-10">
-              <h3 className="text-2xl font-extrabold uppercase">Explore our case studies</h3>
-              <p className="mt-3 text-sm leading-6 text-white/85">Discover the different ways our team helps organisations with their technology.</p>
-              <div className="mt-7 space-y-4">
-                {["IT Support", "Cyber Security", "Cloud Services", "Communications"].map((label) => (
-                  <Link key={label} to="/case-studies" className="flex items-center gap-4 text-lg font-bold uppercase transition hover:translate-x-1">
-                    <CheckCircle2 className="h-6 w-6 shrink-0" /> {label} case studies
+          <div className="mt-12 grid items-stretch gap-6 lg:grid-cols-2">
+            <div className="relative isolate flex min-h-[440px] flex-col overflow-hidden rounded-[2rem] bg-gradient-to-br from-[#a30b25] via-[#8f1028] to-[#5f1025] p-7 text-white shadow-[0_18px_50px_rgba(35,25,45,0.12)] sm:p-10">
+              <div className="relative z-10 flex items-start gap-5">
+                <span className="grid h-16 w-16 shrink-0 place-items-center rounded-2xl bg-white/10 text-white ring-1 ring-white/15">
+                  <BriefcaseBusiness className="h-9 w-9" strokeWidth={1.7} />
+                </span>
+                <div>
+                  <h3 className="text-2xl font-extrabold uppercase leading-tight sm:text-3xl">Explore our<br />case studies</h3>
+                  <p className="mt-3 max-w-md text-sm leading-6 text-white/85">Discover the different ways our team helps organisations with their technology.</p>
+                </div>
+              </div>
+              <div className="relative z-10 mt-7 grid gap-4 sm:grid-cols-2">
+                {[
+                  { label: "IT Support case studies", Icon: Headset },
+                  { label: "Cyber Security case studies", Icon: ShieldCheck },
+                  { label: "Cloud Services case studies", Icon: Cloud },
+                  { label: "Communications case studies", Icon: PhoneCall },
+                ].map(({ label, Icon }) => (
+                  <Link key={label} to="/case-studies" className="group flex items-center gap-3 text-sm font-bold uppercase leading-5 transition hover:translate-x-1">
+                    <span className="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-white/10 text-white ring-1 ring-white/15 transition group-hover:bg-white group-hover:text-primary">
+                      <Icon className="h-5 w-5" />
+                    </span>
+                    {label}
                   </Link>
                 ))}
               </div>
-              <Link to="/case-studies" className="mt-8 inline-flex items-center gap-2 text-sm font-bold uppercase underline underline-offset-4">View all case studies <ArrowRight className="h-4 w-4" /></Link>
-            </div>
-            <div className="flex flex-col justify-center rounded-2xl bg-[#5689aa] p-8 text-white sm:p-10">
-              <p className="text-xs font-bold tracking-[.2em] text-white/75">THE ASPECT IT APPROACH</p>
-              <h3 className="mt-4 text-3xl font-extrabold uppercase leading-tight sm:text-4xl">Straightforward support. Long-term partnerships.</h3>
-              <p className="mt-5 text-base leading-8 text-white/90">
-                We take the time to understand how your business works, then recommend technology and support that makes a genuine difference.
-              </p>
-              <Link to="/about" className="mt-8 inline-flex items-center gap-2 self-start rounded-full bg-white px-6 py-3 text-sm font-bold uppercase text-[#25283a] transition hover:bg-[#25283a] hover:text-white">
-                About Aspect IT <ArrowRight className="h-4 w-4" />
+              <Link to="/case-studies" className="relative z-10 mt-8 inline-flex w-fit items-center gap-3 rounded-full bg-white px-6 py-3.5 text-sm font-extrabold uppercase text-[#99132b] transition hover:-translate-y-0.5 hover:bg-[#f7e9ec]">
+                View all case studies <ArrowRight className="h-4 w-4" />
               </Link>
+              <svg aria-hidden="true" viewBox="0 0 600 180" preserveAspectRatio="none" className="pointer-events-none absolute bottom-0 right-0 h-36 w-[75%]">
+                <path d="M600 0C490 95 340 150 80 180H0C250 140 430 70 600 0Z" fill="#d41435" opacity=".65" />
+                <path d="M600 34C490 112 370 155 180 180" fill="none" stroke="#ff526b" strokeWidth="5" />
+              </svg>
+              <BriefcaseBusiness className="pointer-events-none absolute right-8 top-28 h-28 w-28 text-white/[0.09]" strokeWidth={1.1} />
+            </div>
+            <div className="relative isolate min-h-[440px] overflow-hidden rounded-[2rem] bg-[#f5f6f8] shadow-[0_18px_50px_rgba(35,45,65,0.10)]">
+              <div className="relative z-10 flex h-full min-h-[440px] flex-col justify-center px-7 py-10 sm:px-10 lg:w-[67%] lg:py-12">
+                <p className="text-xs font-bold uppercase tracking-[.2em] text-primary">The Aspect IT approach</p>
+                <h3 className="mt-5 text-3xl font-extrabold uppercase leading-[1.12] text-[#17233f] sm:text-4xl">
+                  Straightforward support. <span className="text-primary">Long-term partnerships.</span>
+                </h3>
+                <p className="mt-5 max-w-lg text-base leading-7 text-slate-600">
+                  We take the time to understand how your business works, then recommend technology and support that makes a genuine difference.
+                </p>
+                <Link to="/about" className="mt-8 inline-flex w-fit items-center gap-3 rounded-full bg-primary px-7 py-3.5 text-sm font-extrabold uppercase text-white transition hover:-translate-y-0.5 hover:bg-[#8f1028]">
+                  About Aspect IT <ArrowRight className="h-4 w-4" />
+                </Link>
+              </div>
+              <div className="absolute inset-y-0 right-0 hidden w-[42%] lg:block">
+                <img src={hero} alt="Aspect IT branded laptop and headset in an office" className="h-full w-full object-cover object-center" />
+                <svg aria-hidden="true" viewBox="0 0 240 700" preserveAspectRatio="none" className="absolute inset-y-0 -left-1 h-full w-24">
+                  <path d="M240 0C155 120 160 260 125 385C95 500 65 620 0 700H0V0Z" fill="#f5f6f8" />
+                  <path d="M240 0C155 120 160 260 125 385C95 500 65 620 0 700" fill="none" stroke="#c10d2b" strokeWidth="10" />
+                </svg>
+              </div>
+              <div className="absolute bottom-0 right-0 h-2 w-full bg-gradient-to-r from-primary/0 via-primary/30 to-primary" />
             </div>
           </div>
         </div>
+        <svg aria-hidden="true" viewBox="0 0 1600 110" preserveAspectRatio="none" className="pointer-events-none absolute bottom-0 left-0 h-12 w-full">
+          <path d="M0 105C380 50 760 40 1080 72C1300 95 1460 85 1600 52" fill="none" stroke="#e5a0a8" strokeWidth="2" opacity=".45" />
+        </svg>
       </section>
 
       <section className="service-directory bg-[#f5f5f5] px-5 py-16 sm:px-8 sm:py-20">
