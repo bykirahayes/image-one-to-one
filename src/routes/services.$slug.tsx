@@ -1,5 +1,5 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
-import { CheckCircle2 } from "lucide-react";
+import { Activity, CheckCircle2, ChevronRight, Headset, Laptop, Monitor, ShieldCheck, Wrench } from "lucide-react";
 import { ContactForm, PageHero } from "@/components/site-chrome";
 import { services } from "@/lib/site-data";
 
@@ -34,36 +34,150 @@ export const Route = createFileRoute("/services/$slug")({
   component: ServicePage,
 });
 
+const supportHighlights = [
+  { title: "Helpdesk Support", detail: "Fast, friendly issue resolution", Icon: Headset },
+  { title: "Device Management", detail: "Keep your systems secure and up to date", Icon: Laptop },
+  { title: "Monitoring & Patching", detail: "Proactive support and security updates", Icon: ShieldCheck },
+  { title: "On-Site & Remote Support", detail: "Flexible help when you need it", Icon: Wrench },
+];
+
+function SupportHero({ summary }: { summary: string }) {
+  return (
+    <section className="relative isolate overflow-hidden bg-[#07172b] text-white">
+      <div aria-hidden="true" className="pointer-events-none absolute -left-20 -top-32 h-64 w-80 -rotate-12 rounded-br-[100%] bg-[#b90027]" />
+      <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_67%_45%,rgba(25,72,105,0.48),transparent_43%),linear-gradient(110deg,#061426_0%,#0b1d32_55%,#071426_100%)]" />
+      <div className="relative mx-auto grid max-w-7xl items-center gap-8 px-5 pb-20 pt-16 sm:px-8 sm:pb-24 sm:pt-20 lg:min-h-[440px] lg:grid-cols-[0.9fr_1.35fr_0.8fr] lg:gap-6 lg:py-16">
+        <div className="relative z-10 max-w-xl">
+          <p className="flex items-center gap-3 text-xs font-extrabold tracking-[0.22em] text-white/80 sm:text-sm">
+            <span className="h-7 w-1.5 rounded-full bg-[#ed1236]" /> IT SERVICES
+          </p>
+          <h1 className="mt-5 text-4xl font-extrabold leading-[1.05] tracking-tight sm:text-5xl lg:text-[3.7rem]">
+            IT <span className="text-[#f0143d]">Support</span>
+          </h1>
+          <p className="mt-6 max-w-lg text-base leading-7 text-white/85 sm:text-lg">{summary}</p>
+          <div className="mt-8 flex flex-wrap gap-3">
+            <Link to="/contact" className="inline-flex items-center gap-2 rounded-full bg-[#e5092d] px-6 py-3 text-sm font-bold text-white shadow-lg shadow-red-950/40 transition hover:-translate-y-0.5 hover:bg-[#c90025]">
+              <Headset className="h-4 w-4" /> Get support
+            </Link>
+            <Link to="/services" className="inline-flex items-center gap-2 rounded-full border border-white/55 px-6 py-3 text-sm font-bold text-white transition hover:bg-white/10">
+              Our services <ChevronRight className="h-4 w-4" />
+            </Link>
+          </div>
+        </div>
+
+        {/* A lightweight, responsive workstation illustration built from HTML and SVG. */}
+        <div className="relative mx-auto flex min-h-[260px] w-full max-w-[590px] items-end justify-center sm:min-h-[310px] lg:min-h-[340px]">
+          <div className="absolute bottom-7 left-[7%] h-44 w-20 rounded-full bg-red-500/10 blur-2xl" />
+          <div className="absolute bottom-6 right-[8%] h-40 w-28 rounded-full bg-blue-400/10 blur-2xl" />
+          <div className="absolute bottom-5 left-[5%] h-3 w-[90%] rounded-full bg-gradient-to-r from-slate-500 via-red-500 to-slate-600 shadow-[0_12px_35px_rgba(239,20,55,0.3)]" />
+          <div className="relative mb-8 flex w-[86%] items-end justify-center gap-2 sm:gap-4">
+            <div className="relative w-[44%]">
+              <div className="aspect-[1.42/1] rounded-t-xl border-[5px] border-[#27384d] bg-[#050b16] p-1.5 shadow-[0_0_35px_rgba(239,20,55,0.22)] sm:border-[7px]">
+                <div className="relative flex h-full items-center justify-center overflow-hidden rounded-sm bg-[radial-gradient(ellipse_at_70%_80%,#a90027,transparent_45%),linear-gradient(145deg,#111d31,#050914)]">
+                  <div className="absolute -bottom-1 left-0 h-1/2 w-full -skew-y-12 bg-gradient-to-r from-transparent via-red-600/70 to-transparent blur-sm" />
+                  <div className="relative text-center">
+                    <Monitor className="mx-auto h-6 w-6 text-red-500 sm:h-8 sm:w-8" />
+                    <span className="mt-1 block text-[9px] font-bold tracking-wide text-white sm:text-xs">ASPECT IT</span>
+                  </div>
+                </div>
+              </div>
+              <div className="mx-auto h-5 w-2/5 bg-gradient-to-b from-slate-500 to-slate-800" />
+              <div className="mx-auto h-2 w-3/5 rounded-b-md bg-slate-500" />
+            </div>
+            <div className="relative w-[44%]">
+              <div className="aspect-[1.42/1] rounded-t-xl border-[5px] border-[#27384d] bg-[#050b16] p-1.5 shadow-[0_0_35px_rgba(239,20,55,0.2)] sm:border-[7px]">
+                <div className="relative flex h-full items-center justify-center overflow-hidden rounded-sm bg-[radial-gradient(ellipse_at_50%_95%,#c90030,transparent_45%),linear-gradient(145deg,#101c30,#050914)]">
+                  <div className="absolute bottom-0 left-0 h-1/2 w-full -skew-y-12 bg-gradient-to-r from-transparent via-red-600/70 to-transparent blur-sm" />
+                  <div className="relative text-center">
+                    <span className="block text-sm font-semibold tracking-tight text-white sm:text-xl">aspect<span className="text-red-500">▪</span></span>
+                    <span className="block text-[7px] tracking-[0.3em] text-white/70 sm:text-[9px]">IT LIMITED</span>
+                  </div>
+                </div>
+              </div>
+              <div className="mx-auto h-5 w-2/5 bg-gradient-to-b from-slate-500 to-slate-800" />
+              <div className="mx-auto h-2 w-3/5 rounded-b-md bg-slate-500" />
+            </div>
+          </div>
+          <div className="absolute bottom-1 left-[13%] hidden h-20 w-20 rounded-full border-[7px] border-slate-700 bg-slate-950 shadow-xl sm:block">
+            <div className="absolute -left-3 top-2 h-10 w-4 rounded-full border-2 border-red-500/70" />
+            <div className="absolute -right-3 top-2 h-10 w-4 rounded-full border-2 border-red-500/70" />
+          </div>
+          <div className="absolute bottom-8 right-[4%] h-16 w-20 rounded-t-xl border border-white/10 bg-gradient-to-b from-slate-700 to-slate-950 p-2 shadow-xl">
+            <div className="grid h-full grid-cols-6 gap-1">{Array.from({ length: 24 }, (_, i) => <span key={i} className="rounded-[2px] bg-slate-400/50" />)}</div>
+          </div>
+          <div className="absolute right-[8%] top-2 h-24 w-20 rounded-full bg-gradient-to-b from-emerald-800/50 to-transparent blur-xl" />
+        </div>
+
+        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-1">
+          {supportHighlights.map(({ title, detail, Icon }) => (
+            <div key={title} className="flex items-center gap-3 rounded-2xl border border-white/20 bg-white/[0.07] p-3.5 shadow-lg backdrop-blur-md transition hover:border-red-400/60 hover:bg-white/[0.11]">
+              <span className="grid h-11 w-11 shrink-0 place-items-center rounded-full bg-gradient-to-br from-[#f21a42] to-[#97001e] shadow-lg shadow-red-950/40">
+                <Icon className="h-5 w-5 text-white" />
+              </span>
+              <span className="min-w-0">
+                <span className="block text-sm font-bold text-white">{title}</span>
+                <span className="mt-0.5 block text-xs leading-5 text-white/70">{detail}</span>
+              </span>
+            </div>
+          ))}
+        </div>
+      </div>
+      <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 bottom-0 h-7 overflow-hidden">
+        <svg viewBox="0 0 1600 50" preserveAspectRatio="none" className="h-full w-full">
+          <path d="M0 0C280 50 560 40 820 24S1300 0 1600 30V50H0Z" fill="#ed1236" />
+          <path d="M0 8C280 58 560 48 820 32S1300 8 1600 38" fill="none" stroke="#fff" strokeWidth="4" />
+        </svg>
+      </div>
+    </section>
+  );
+}
+
 function ServicePage() {
   const { service } = Route.useLoaderData();
   const related = services.filter((s) => s.group === service.group && s.slug !== service.slug);
+  const isITSupport = service.slug === "it-support";
+
   return (
     <>
-      <PageHero eyebrow={service.group.toUpperCase()} title={service.title}>{service.summary}</PageHero>
-      <div className="mx-auto grid max-w-7xl gap-12 px-5 py-16 sm:px-8 lg:grid-cols-[1fr_420px]">
-        <div>
-          <h2 className="text-2xl font-bold text-navy">What's included</h2>
-          <ul className="mt-6 grid gap-4 sm:grid-cols-2">
-            {service.points.map((p) => (
-              <li key={p} className="flex gap-3 rounded-xl bg-panel p-5 text-foreground"><CheckCircle2 className="h-5 w-5 shrink-0 text-primary" /> {p}</li>
-            ))}
-          </ul>
-          <h2 className="mt-12 text-2xl font-bold text-navy">Why Aspect IT?</h2>
-          <p className="mt-4 text-foreground">We've supported businesses of all sizes since 2003. You get a local team that knows you by name, responds fast, and gives honest advice — with everything from IT support to websites, VoIP and internet under one roof.</p>
-          {related.length > 0 && (
-            <div className="mt-10">
-              <h3 className="font-semibold text-navy">Related services</h3>
-              <div className="mt-3 flex flex-wrap gap-3">
-                {related.map((r) => <Link key={r.slug} to="/services/$slug" params={{ slug: r.slug }} className="rounded-full border border-primary px-4 py-2 text-sm font-semibold text-primary hover:bg-primary hover:text-primary-foreground">{r.title}</Link>)}
+      {isITSupport ? <SupportHero summary={service.summary} /> : <PageHero eyebrow={service.group.toUpperCase()} title={service.title}>{service.summary}</PageHero>}
+      <section className="relative overflow-hidden bg-white">
+        <div className="mx-auto grid max-w-7xl gap-10 px-5 py-12 sm:px-8 sm:py-16 lg:grid-cols-[minmax(0,1fr)_380px] lg:gap-12">
+          <div>
+            <h2 className="text-2xl font-bold text-navy">What's included</h2>
+            <ul className="mt-6 grid gap-3 sm:grid-cols-2">
+              {service.points.map((p) => (
+                <li key={p} className="flex min-h-[76px] items-start gap-3 rounded-xl bg-[#ededed] p-5 text-sm leading-6 text-[#10213a] sm:text-base">
+                  <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-[#d20b2e]" /> {p}
+                </li>
+              ))}
+            </ul>
+            <h2 className="mt-10 text-2xl font-bold text-navy">Why Aspect IT?</h2>
+            <p className="mt-4 max-w-3xl leading-7 text-[#24344a]">We've supported businesses of all sizes since 2003. You get a local team that knows you by name, responds fast, and gives honest advice — with everything from IT support to websites, VoIP and internet under one roof.</p>
+            {related.length > 0 && (
+              <div className="mt-8">
+                <h3 className="font-semibold text-navy">Related services</h3>
+                <div className="mt-3 flex flex-wrap gap-3">
+                  {related.map((r) => <Link key={r.slug} to="/services/$slug" params={{ slug: r.slug }} className="rounded-full border border-[#d20b2e] px-4 py-2 text-sm font-semibold text-[#bd0928] transition hover:bg-[#bd0928] hover:text-white">{r.title}</Link>)}
+                </div>
               </div>
-            </div>
-          )}
+            )}
+          </div>
+          <aside className="h-fit rounded-2xl bg-[#e9e9e9] p-6 shadow-sm sm:p-7">
+            <h2 className="mb-5 text-center text-lg font-extrabold uppercase text-[#b50927]">Get in touch</h2>
+            <ContactForm />
+          </aside>
         </div>
-        <aside className="h-fit rounded-xl bg-panel p-6">
-          <h2 className="mb-4 text-center text-xl font-bold uppercase text-primary">Get in touch</h2>
-          <ContactForm />
-        </aside>
-      </div>
+        <div aria-hidden="true" className="pointer-events-none relative h-16 overflow-hidden bg-gradient-to-b from-white to-slate-50">
+          <svg viewBox="0 0 1600 100" preserveAspectRatio="none" className="absolute inset-0 h-full w-full">
+            <g fill="#d9dde1">
+              {Array.from({ length: 22 }, (_, i) => <rect key={i} x={i * 76} y={35 + (i % 4) * 7} width="45" height={65 - (i % 4) * 7} />)}
+              {Array.from({ length: 22 }, (_, i) => <rect key={i} x={i * 76 + 12} y={18 + (i % 5) * 5} width="20" height="18" />)}
+            </g>
+            <path d="M0 82C300 35 520 38 800 58S1300 75 1600 22" fill="none" stroke="#e5092d" strokeWidth="7" />
+            <path d="M0 88C300 41 520 44 800 64S1300 81 1600 28" fill="none" stroke="#0c1d34" strokeWidth="4" />
+          </svg>
+        </div>
+      </section>
     </>
   );
 }
