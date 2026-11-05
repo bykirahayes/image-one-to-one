@@ -1,6 +1,6 @@
 import { useState, type ReactNode } from "react";
 import { Link } from "@tanstack/react-router";
-import { Mail, MapPin, Phone } from "lucide-react";
+import { Building2, ChevronRight, Layers, Mail, MapPin, Phone } from "lucide-react";
 import logo from "@/assets/aspect-logo.png";
 import { HeaderNavigation } from "@/components/header-navigation";
 import { MobileNavigation } from "@/components/mobile-navigation";
@@ -27,46 +27,104 @@ export function SiteHeader() {
 
 export function SiteFooter() {
   return (
-    <footer className="relative isolate overflow-hidden bg-[#101f38] text-primary-foreground">
-      <div className="relative mx-auto grid max-w-7xl gap-10 px-5 py-14 sm:px-8 md:grid-cols-2 lg:grid-cols-[1.15fr_1fr_0.9fr_1.25fr] lg:gap-0 lg:py-16">
-        <div className="lg:pr-10">
-          <img src={logo} alt="Aspect IT Limited" className="h-12 w-auto rounded bg-white p-1.5" />
-          <p className="mt-4 max-w-xs text-sm leading-6 text-white/75">Supporting businesses of all sizes across Greater Manchester and West Yorkshire since 2003.</p>
-          <div className="mt-5 flex items-center gap-2.5">
-            {socialIcons.map((I, i) => <span key={i} className="grid h-9 w-9 place-items-center rounded-lg border border-white/35 text-white/85 transition hover:border-primary hover:bg-primary"><I className="h-4 w-4" /></span>)}
-          </div>
-        </div>
-        <div className="border-white/20 md:border-l md:pl-8 lg:px-8">
-          <h3 className="flex items-center gap-3 font-bold uppercase"><span className="h-1 w-8 bg-primary" />Services</h3>
-          <ul className="mt-5 space-y-2.5 text-sm text-white/75">
-            {services.slice(0, 6).map((s) => <li key={s.slug}><Link to="/services/$slug" params={{ slug: s.slug }} className="transition hover:text-white">{s.title}</Link></li>)}
-          </ul>
-        </div>
-        <div className="border-white/20 md:border-l md:pl-8 lg:px-8">
-          <h3 className="flex items-center gap-3 font-bold uppercase"><span className="h-1 w-8 bg-primary" />Company</h3>
-          <ul className="mt-5 space-y-2.5 text-sm text-white/75">
-            <li><Link to="/about" className="transition hover:text-white">About Us</Link></li>
-            <li><Link to="/case-studies" className="transition hover:text-white">Case Studies</Link></li>
-            <li><Link to="/blog" className="transition hover:text-white">Blog</Link></li>
-            <li><Link to="/contact" className="transition hover:text-white">Contact</Link></li>
-          </ul>
-        </div>
-        <div className="border-white/20 md:border-l md:pl-8 lg:pl-8">
-          <h3 className="flex items-center gap-3 font-bold uppercase"><span className="h-1 w-8 bg-primary" />Get in touch</h3>
-          <ul className="mt-5 space-y-3.5 text-sm leading-6 text-white/80">
-            <li className="flex gap-3"><Phone className="mt-1 h-4 w-4 shrink-0 text-white" /><a href="tel:01612419050" className="transition hover:text-white">0161 241 9050</a></li>
-            <li className="flex gap-3"><Mail className="mt-1 h-4 w-4 shrink-0 text-white" /><a href="mailto:info@aspectit.co.uk" className="transition hover:text-white">info@aspectit.co.uk</a></li>
-            <li className="flex gap-3"><MapPin className="mt-1 h-4 w-4 shrink-0 text-white" /><span>County End Business Centre, Jackson Street, Springhead, Oldham OL4 4TZ</span></li>
-          </ul>
-        </div>
-      </div>
-      <div aria-hidden="true" className="pointer-events-none absolute bottom-8 left-0 h-5 w-full overflow-hidden">
-        <svg viewBox="0 0 1600 40" preserveAspectRatio="none" className="h-full w-full">
-          <path d="M0 8C300 42 550 42 820 16S1300 2 1600 24" fill="none" stroke="#b20d26" strokeWidth="8" />
-          <path d="M0 20C300 54 550 54 820 28S1300 14 1600 36" fill="none" stroke="#ed3048" strokeWidth="2" />
+    <footer className="relative isolate overflow-hidden bg-[#061426] text-white">
+      {/* Pale skyline and sweeping red-and-white roofline */}
+      <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 top-0 h-36 overflow-hidden sm:h-40">
+        <div className="absolute inset-0 bg-gradient-to-b from-white via-slate-100 to-transparent" />
+        <svg viewBox="0 0 1600 180" preserveAspectRatio="none" className="absolute inset-0 h-full w-full">
+          <g fill="#cbd0d6" opacity=".72">
+            <path d="M24 120V62h24V40h12v22h16v58zm60 0V45h22V24h10v21h18v75zm64 0V72h18V50h12v22h20v48zm68 0V32h32V14h12v18h20v88zm82 0V62h20V42h12v20h22v58zm70 0V40h26V18h14v22h22v80zm78 0V72h22V48h12v24h20v48zm76 0V30h30V8h14v22h22v90zm82 0V58h22V38h12v20h20v62zm72 0V44h28V20h12v24h22v76zm80 0V68h20V46h12v22h20v46zm74 0V34h30V12h12v22h22v88zm82 0V64h22V42h12v22h20v56zm74 0V40h28V18h12v22h22v78zm82 0V70h20V48h12v22h20v48zm76 0V30h28V8h14v22h22v90zm80 0V60h22V38h12v22h20v60zm74 0V42h28V20h12v22h22v76zm78 0V68h20V46h12v22h20v46zm76 0V34h30V12h12v22h22v88zm80 0V58h22V36h12v22h20v62zm76 0V42h26V20h12v22h22v76zm76 0V64h20V42h12v22h20v56z"/>
+          </g>
+          <path d="M0 116C270 40 520 56 790 104S1260 150 1600 28V180H0Z" fill="#061426"/>
+          <path d="M0 112C270 36 520 52 790 100S1260 146 1600 24" fill="none" stroke="#f8fafc" strokeWidth="18"/>
+          <path d="M0 128C270 52 520 68 790 116S1260 162 1600 40" fill="none" stroke="#e5092d" strokeWidth="8"/>
+          <path d="M0 137C270 61 520 77 790 125S1260 171 1600 49" fill="none" stroke="#ff526b" strokeWidth="2"/>
         </svg>
       </div>
-      <div className="border-t border-white/15 px-5 py-5 text-center text-xs text-white/60">© {new Date().getFullYear()} Aspect IT Limited. All rights reserved.</div>
+
+      <div className="relative mx-auto grid max-w-[1500px] gap-10 px-6 pb-16 pt-40 sm:px-10 sm:pt-44 md:grid-cols-2 lg:grid-cols-[1.25fr_1fr_1fr_1.35fr] lg:gap-0 lg:px-12 lg:pb-20">
+        <div className="lg:pr-12">
+          <Link to="/" aria-label="Aspect IT home" className="inline-block">
+            <img src={logo} alt="Aspect IT Limited" className="h-16 w-auto object-contain sm:h-[4.5rem]" />
+          </Link>
+          <p className="mt-5 max-w-sm text-base leading-7 text-white/90">
+            Supporting businesses of all sizes across Greater Manchester and West Yorkshire since 2003.
+          </p>
+          <div className="mt-7 flex flex-wrap items-center gap-3">
+            {socialIcons.map((Icon, i) => (
+              <span key={i} className="grid h-11 w-11 place-items-center rounded-xl border border-white/75 text-white transition duration-200 hover:-translate-y-1 hover:border-[#ed1236] hover:bg-[#ed1236]">
+                <Icon className="h-5 w-5" />
+              </span>
+            ))}
+          </div>
+        </div>
+
+        <div className="border-t border-white/30 pt-7 md:border-t-0 md:pt-0 lg:border-l lg:px-10 lg:pt-1">
+          <h3 className="flex items-center gap-4 text-xl font-extrabold uppercase tracking-wide">
+            <Layers className="h-10 w-10 shrink-0 text-[#ed1236]" strokeWidth={2.2} /> Services
+          </h3>
+          <ul className="mt-5 space-y-3 text-base text-white/90">
+            {services.slice(0, 6).map((s) => (
+              <li key={s.slug}>
+                <Link to="/services/$slug" params={{ slug: s.slug }} className="group flex items-center gap-3 transition hover:text-white">
+                  <ChevronRight className="h-5 w-5 shrink-0 text-[#ed1236] transition group-hover:translate-x-1" />{s.title}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div className="border-t border-white/30 pt-7 md:border-t-0 md:pt-0 lg:border-l lg:px-10 lg:pt-1">
+          <h3 className="flex items-center gap-4 text-xl font-extrabold uppercase tracking-wide">
+            <Building2 className="h-10 w-10 shrink-0 text-[#ed1236]" strokeWidth={2.2} /> Company
+          </h3>
+          <ul className="mt-5 space-y-3 text-base text-white/90">
+            {[
+              { label: "About Us", to: "/about" },
+              { label: "Case Studies", to: "/case-studies" },
+              { label: "Blog", to: "/blog" },
+              { label: "Contact", to: "/contact" },
+            ].map((item) => (
+              <li key={item.to}>
+                <Link to={item.to} className="group flex items-center gap-3 transition hover:text-white">
+                  <ChevronRight className="h-5 w-5 shrink-0 text-[#ed1236] transition group-hover:translate-x-1" />{item.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div className="border-t border-white/30 pt-7 md:border-t-0 md:pt-0 lg:border-l lg:pl-10 lg:pt-1">
+          <h3 className="flex items-center gap-4 text-xl font-extrabold uppercase tracking-wide">
+            <Mail className="h-10 w-10 shrink-0 text-[#ed1236]" strokeWidth={2.2} /> Get in touch
+          </h3>
+          <ul className="mt-5 space-y-3.5 text-base leading-7 text-white/90">
+            <li className="flex items-center gap-4">
+              <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-white/15"><Phone className="h-6 w-6" /></span>
+              <a href="tel:01612419050" className="transition hover:text-[#ff526b]">0161 241 9050</a>
+            </li>
+            <li className="flex items-center gap-4">
+              <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-white/15"><Mail className="h-6 w-6" /></span>
+              <a href="mailto:info@aspectit.co.uk" className="break-all transition hover:text-[#ff526b]">info@aspectit.co.uk</a>
+            </li>
+            <li className="flex items-start gap-4">
+              <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-white/15"><MapPin className="h-6 w-6" /></span>
+              <span>County End Business Centre, Jackson Street, Springhead, Oldham OL4 4TZ</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div className="relative border-t border-white/20 px-5 py-6 text-center">
+        <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 bottom-0 h-20 overflow-hidden">
+          <svg viewBox="0 0 1600 120" preserveAspectRatio="none" className="h-full w-full">
+            <path d="M0 0C280 74 520 104 820 90S1300 60 1600 0V120H0Z" fill="#9f001e" opacity=".48"/>
+            <path d="M0 0C280 74 520 104 820 90S1300 60 1600 0" fill="none" stroke="#ed1236" strokeWidth="12"/>
+            <path d="M0 12C280 86 520 116 820 102S1300 72 1600 12" fill="none" stroke="#ff526b" strokeWidth="2"/>
+          </svg>
+        </div>
+        <p className="relative z-10 text-sm font-medium text-white/85">© {new Date().getFullYear()} Aspect IT Limited. All rights reserved.</p>
+      </div>
     </footer>
   );
 }
