@@ -176,20 +176,36 @@ function Index() {
         </div>
       </section>
 
-      <section className="bg-white px-5 py-16 sm:px-8 sm:py-20">
-        <div className="mx-auto max-w-6xl text-center">
-          <p className="text-xs font-bold tracking-[.2em] text-primary">OUR PARTNERS</p>
-          <h2 className="mt-3 text-3xl font-extrabold uppercase leading-tight text-black sm:text-4xl">We work with <span className="text-primary">trusted &amp; expert</span> suppliers</h2>
+      <section className="partners-section relative isolate overflow-hidden bg-white px-5 py-20 sm:px-8 sm:py-24">
+        <div aria-hidden="true" className="partners-sweep partners-sweep-top" />
+        <div aria-hidden="true" className="partners-sweep partners-sweep-bottom" />
+        <div className="relative z-10 mx-auto max-w-[1500px] text-center">
+          <p className="partners-eyebrow"><span />OUR PARTNERS<span /></p>
+          <h2 className="partners-heading mt-5 text-3xl font-extrabold uppercase leading-tight text-[#101525] sm:text-4xl lg:text-5xl">
+            We work with <span>trusted &amp; expert</span> suppliers
+          </h2>
           <p className="mx-auto mt-5 max-w-5xl text-base leading-7 text-slate-700 sm:text-lg">
             We work with established technology providers to bring dependable solutions, support and expertise to your business.
           </p>
-          <div className="mt-12 grid grid-cols-2 items-center gap-8 sm:grid-cols-4">
-            {supplierNames.map((name) => (
-              <div key={name} className="flex min-h-24 items-center justify-center rounded-xl border border-slate-100 bg-white px-4 py-5 text-xl font-extrabold tracking-tight text-slate-600 shadow-sm sm:text-2xl">
-                {name === "Microsoft" ? <span><span className="mr-2 inline-grid grid-cols-2 gap-0.5 align-middle"><i className="h-3 w-3 bg-[#f25022]" /><i className="h-3 w-3 bg-[#7fba00]" /><i className="h-3 w-3 bg-[#00a4ef]" /><i className="h-3 w-3 bg-[#ffb900]" /></span>Microsoft</span> : name}
-              </div>
-            ))}
+          <div className="partners-grid mt-14 grid grid-cols-1 items-stretch gap-5 sm:grid-cols-2 xl:grid-cols-4">
+            <a href="https://www.microsoft.com/" target="_blank" rel="noreferrer" aria-label="Microsoft website" className="partner-card partner-card-1">
+              <span className="partner-logo microsoft-logo" aria-hidden="true"><span className="microsoft-mark"><i /><i /><i /><i /></span><span>Microsoft</span></span>
+              <span className="partner-card-glint" />
+            </a>
+            <a href="https://www.3cx.com/" target="_blank" rel="noreferrer" aria-label="3CX website" className="partner-card partner-card-2">
+              <span className="partner-logo threecx-logo" aria-hidden="true"><span>3</span>CX</span>
+              <span className="partner-card-glint" />
+            </a>
+            <a href="https://www.eset.com/" target="_blank" rel="noreferrer" aria-label="ESET website" className="partner-card partner-card-3">
+              <span className="partner-logo eset-logo" aria-hidden="true">eset</span>
+              <span className="partner-card-glint" />
+            </a>
+            <a href="https://www.ncsc.gov.uk/cyberessentials/overview" target="_blank" rel="noreferrer" aria-label="Cyber Essentials information" className="partner-card partner-card-4">
+              <span className="partner-logo cyber-logo" aria-hidden="true"><span className="cyber-shield"><ShieldCheck /></span><span>Cyber<br />Essentials</span></span>
+              <span className="partner-card-glint" />
+            </a>
           </div>
+          <div className="partners-pagination mt-12" aria-hidden="true"><i /><i /><i /></div>
         </div>
       </section>
 
