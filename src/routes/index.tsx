@@ -8,7 +8,6 @@ import {
 import hero from "@/assets/hero-laptop-logo.jpg";
 import skyline from "@/assets/skyline.png";
 import logo from "@/assets/aspect-logo.png";
-import { SiteHeader } from "@/components/site-chrome";
 import { services, serviceGroups } from "@/lib/site-data";
 
 export const Route = createFileRoute("/")({
@@ -51,9 +50,7 @@ const serviceColumns = [
 function Index() {
   return (
     <div className="min-h-screen overflow-x-hidden bg-white font-sans text-[#25283a]">
-      <SiteHeader />
-
-      <section className="hero-section relative isolate overflow-hidden">
+<section className="hero-section relative isolate overflow-hidden">
         <img src={hero} alt="Laptop and headset on an office desk" className="absolute inset-y-0 right-0 -z-20 hidden h-full w-[68%] object-cover lg:block" />
         <div className="absolute inset-0 -z-10 hidden bg-gradient-to-r from-white via-white/95 to-white/10 lg:block" />
         <img src={skyline} alt="" className="pointer-events-none absolute bottom-0 left-0 -z-10 hidden h-36 w-[72%] object-cover object-bottom opacity-25 lg:block" />
