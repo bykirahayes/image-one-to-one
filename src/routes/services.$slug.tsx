@@ -1,5 +1,5 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
-import { Activity, CheckCircle2, ChevronRight, Headset, Laptop, Monitor, ShieldCheck, Wrench } from "lucide-react";
+import { CheckCircle2, ChevronRight, Headset, Laptop, Monitor, ShieldCheck, Wrench } from "lucide-react";
 import { ContactForm, PageHero } from "@/components/site-chrome";
 import { services } from "@/lib/site-data";
 
@@ -65,47 +65,15 @@ function SupportHero({ summary }: { summary: string }) {
           </div>
         </div>
 
-        {/* A lightweight, responsive workstation illustration built from HTML and SVG. */}
-        <div className="relative mx-auto flex min-h-[260px] w-full max-w-[590px] items-end justify-center sm:min-h-[310px] lg:min-h-[340px]">
-          <div className="absolute bottom-7 left-[7%] h-44 w-20 rounded-full bg-red-500/10 blur-2xl" />
-          <div className="absolute bottom-6 right-[8%] h-40 w-28 rounded-full bg-blue-400/10 blur-2xl" />
-          <div className="absolute bottom-5 left-[5%] h-3 w-[90%] rounded-full bg-gradient-to-r from-slate-500 via-red-500 to-slate-600 shadow-[0_12px_35px_rgba(239,20,55,0.3)]" />
-          <div className="relative mb-8 flex w-[86%] items-end justify-center gap-2 sm:gap-4">
-            <div className="relative w-[44%]">
-              <div className="aspect-[1.42/1] rounded-t-xl border-[5px] border-[#27384d] bg-[#050b16] p-1.5 shadow-[0_0_35px_rgba(239,20,55,0.22)] sm:border-[7px]">
-                <div className="relative flex h-full items-center justify-center overflow-hidden rounded-sm bg-[radial-gradient(ellipse_at_70%_80%,#a90027,transparent_45%),linear-gradient(145deg,#111d31,#050914)]">
-                  <div className="absolute -bottom-1 left-0 h-1/2 w-full -skew-y-12 bg-gradient-to-r from-transparent via-red-600/70 to-transparent blur-sm" />
-                  <div className="relative text-center">
-                    <Monitor className="mx-auto h-6 w-6 text-red-500 sm:h-8 sm:w-8" />
-                    <span className="mt-1 block text-[9px] font-bold tracking-wide text-white sm:text-xs">ASPECT IT</span>
-                  </div>
-                </div>
-              </div>
-              <div className="mx-auto h-5 w-2/5 bg-gradient-to-b from-slate-500 to-slate-800" />
-              <div className="mx-auto h-2 w-3/5 rounded-b-md bg-slate-500" />
-            </div>
-            <div className="relative w-[44%]">
-              <div className="aspect-[1.42/1] rounded-t-xl border-[5px] border-[#27384d] bg-[#050b16] p-1.5 shadow-[0_0_35px_rgba(239,20,55,0.2)] sm:border-[7px]">
-                <div className="relative flex h-full items-center justify-center overflow-hidden rounded-sm bg-[radial-gradient(ellipse_at_50%_95%,#c90030,transparent_45%),linear-gradient(145deg,#101c30,#050914)]">
-                  <div className="absolute bottom-0 left-0 h-1/2 w-full -skew-y-12 bg-gradient-to-r from-transparent via-red-600/70 to-transparent blur-sm" />
-                  <div className="relative text-center">
-                    <span className="block text-sm font-semibold tracking-tight text-white sm:text-xl">aspect<span className="text-red-500">▪</span></span>
-                    <span className="block text-[7px] tracking-[0.3em] text-white/70 sm:text-[9px]">IT LIMITED</span>
-                  </div>
-                </div>
-              </div>
-              <div className="mx-auto h-5 w-2/5 bg-gradient-to-b from-slate-500 to-slate-800" />
-              <div className="mx-auto h-2 w-3/5 rounded-b-md bg-slate-500" />
-            </div>
-          </div>
-          <div className="absolute bottom-1 left-[13%] hidden h-20 w-20 rounded-full border-[7px] border-slate-700 bg-slate-950 shadow-xl sm:block">
-            <div className="absolute -left-3 top-2 h-10 w-4 rounded-full border-2 border-red-500/70" />
-            <div className="absolute -right-3 top-2 h-10 w-4 rounded-full border-2 border-red-500/70" />
-          </div>
-          <div className="absolute bottom-8 right-[4%] h-16 w-20 rounded-t-xl border border-white/10 bg-gradient-to-b from-slate-700 to-slate-950 p-2 shadow-xl">
-            <div className="grid h-full grid-cols-6 gap-1">{Array.from({ length: 24 }, (_, i) => <span key={i} className="rounded-[2px] bg-slate-400/50" />)}</div>
-          </div>
-          <div className="absolute right-[8%] top-2 h-24 w-20 rounded-full bg-gradient-to-b from-emerald-800/50 to-transparent blur-xl" />
+        <div className="relative mx-auto flex w-full max-w-[620px] items-center justify-center lg:scale-[1.04]">
+          <img
+            src="/images/it-support-workstation.webp"
+            alt="Aspect IT workstation with dual monitors, support headset and red-lit equipment"
+            className="h-auto w-full rounded-2xl object-contain drop-shadow-[0_24px_45px_rgba(0,0,0,0.35)]"
+            width="559"
+            height="373"
+            fetchPriority="high"
+          />
         </div>
 
         <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-1">
