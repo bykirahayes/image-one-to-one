@@ -40,8 +40,6 @@ const values = [
   { icon: House, title: "One company", text: "Everything you need under one roof — IT support, websites, VoIP and internet.", color: "bg-[#a0bb70]" },
 ];
 
-const supplierNames = ["Microsoft", "3CX", "ESET", "Cyber Essentials"];
-
 const serviceColumns = [
   { title: "IT Services", icon: Headset, lines: ["IT Support", "IT Consultancy", "IT Projects", "Network Installation", "Hardware & Software"] },
   { title: "Managed Security", icon: ShieldCheck, lines: ["Cyber Security", "Cyber Essentials", "Anti-virus Solutions", "Network Security"] },
