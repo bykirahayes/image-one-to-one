@@ -27,38 +27,46 @@ export function SiteHeader() {
 
 export function SiteFooter() {
   return (
-    <footer className="bg-navy text-primary-foreground">
-      <div className="mx-auto grid max-w-7xl gap-10 px-5 py-14 sm:px-8 md:grid-cols-2 lg:grid-cols-4">
-        <div>
-          <img src={logo} alt="Aspect IT Limited" className="h-12 w-auto rounded bg-background p-1.5" />
-          <p className="mt-4 text-sm opacity-80">Supporting businesses of all sizes across Greater Manchester and West Yorkshire since 2003.</p>
-          <div className="mt-5 flex gap-3">{socialIcons.map((I, i) => <I key={i} className="h-4 w-4 opacity-80" />)}</div>
+    <footer className="relative isolate overflow-hidden bg-[#101f38] text-primary-foreground">
+      <div className="relative mx-auto grid max-w-7xl gap-10 px-5 py-14 sm:px-8 md:grid-cols-2 lg:grid-cols-[1.15fr_1fr_0.9fr_1.25fr] lg:gap-0 lg:py-16">
+        <div className="lg:pr-10">
+          <img src={logo} alt="Aspect IT Limited" className="h-12 w-auto rounded bg-white p-1.5" />
+          <p className="mt-4 max-w-xs text-sm leading-6 text-white/75">Supporting businesses of all sizes across Greater Manchester and West Yorkshire since 2003.</p>
+          <div className="mt-5 flex items-center gap-2.5">
+            {socialIcons.map((I, i) => <span key={i} className="grid h-9 w-9 place-items-center rounded-lg border border-white/35 text-white/85 transition hover:border-primary hover:bg-primary"><I className="h-4 w-4" /></span>)}
+          </div>
         </div>
-        <div>
-          <h3 className="font-semibold uppercase text-primary-foreground">Services</h3>
-          <ul className="mt-4 space-y-2 text-sm opacity-80">
-            {services.slice(0, 6).map((s) => <li key={s.slug}><Link to="/services/$slug" params={{ slug: s.slug }} className="hover:underline">{s.title}</Link></li>)}
+        <div className="border-white/20 md:border-l md:pl-8 lg:px-8">
+          <h3 className="flex items-center gap-3 font-bold uppercase"><span className="h-1 w-8 bg-primary" />Services</h3>
+          <ul className="mt-5 space-y-2.5 text-sm text-white/75">
+            {services.slice(0, 6).map((s) => <li key={s.slug}><Link to="/services/$slug" params={{ slug: s.slug }} className="transition hover:text-white">{s.title}</Link></li>)}
           </ul>
         </div>
-        <div>
-          <h3 className="font-semibold uppercase">Company</h3>
-          <ul className="mt-4 space-y-2 text-sm opacity-80">
-            <li><Link to="/about" className="hover:underline">About Us</Link></li>
-            <li><Link to="/case-studies" className="hover:underline">Case Studies</Link></li>
-            <li><Link to="/blog" className="hover:underline">Blog</Link></li>
-            <li><Link to="/contact" className="hover:underline">Contact</Link></li>
+        <div className="border-white/20 md:border-l md:pl-8 lg:px-8">
+          <h3 className="flex items-center gap-3 font-bold uppercase"><span className="h-1 w-8 bg-primary" />Company</h3>
+          <ul className="mt-5 space-y-2.5 text-sm text-white/75">
+            <li><Link to="/about" className="transition hover:text-white">About Us</Link></li>
+            <li><Link to="/case-studies" className="transition hover:text-white">Case Studies</Link></li>
+            <li><Link to="/blog" className="transition hover:text-white">Blog</Link></li>
+            <li><Link to="/contact" className="transition hover:text-white">Contact</Link></li>
           </ul>
         </div>
-        <div>
-          <h3 className="font-semibold uppercase">Get in touch</h3>
-          <ul className="mt-4 space-y-3 text-sm opacity-80">
-            <li className="flex gap-2"><Phone className="h-4 w-4 shrink-0" /> 0161 241 9050</li>
-            <li className="flex gap-2"><Mail className="h-4 w-4 shrink-0" /> info@aspectit.co.uk</li>
-            <li className="flex gap-2"><MapPin className="h-4 w-4 shrink-0" /> County End Business Centre, Jackson Street, Springhead, Oldham OL4 4TZ</li>
+        <div className="border-white/20 md:border-l md:pl-8 lg:pl-8">
+          <h3 className="flex items-center gap-3 font-bold uppercase"><span className="h-1 w-8 bg-primary" />Get in touch</h3>
+          <ul className="mt-5 space-y-3.5 text-sm leading-6 text-white/80">
+            <li className="flex gap-3"><Phone className="mt-1 h-4 w-4 shrink-0 text-white" /><a href="tel:01612419050" className="transition hover:text-white">0161 241 9050</a></li>
+            <li className="flex gap-3"><Mail className="mt-1 h-4 w-4 shrink-0 text-white" /><a href="mailto:info@aspectit.co.uk" className="transition hover:text-white">info@aspectit.co.uk</a></li>
+            <li className="flex gap-3"><MapPin className="mt-1 h-4 w-4 shrink-0 text-white" /><span>County End Business Centre, Jackson Street, Springhead, Oldham OL4 4TZ</span></li>
           </ul>
         </div>
       </div>
-      <div className="border-t border-primary-foreground/15 py-5 text-center text-xs opacity-70">© {new Date().getFullYear()} Aspect IT Limited. All rights reserved.</div>
+      <div aria-hidden="true" className="pointer-events-none absolute bottom-8 left-0 h-5 w-full overflow-hidden">
+        <svg viewBox="0 0 1600 40" preserveAspectRatio="none" className="h-full w-full">
+          <path d="M0 8C300 42 550 42 820 16S1300 2 1600 24" fill="none" stroke="#b20d26" strokeWidth="8" />
+          <path d="M0 20C300 54 550 54 820 28S1300 14 1600 36" fill="none" stroke="#ed3048" strokeWidth="2" />
+        </svg>
+      </div>
+      <div className="border-t border-white/15 px-5 py-5 text-center text-xs text-white/60">© {new Date().getFullYear()} Aspect IT Limited. All rights reserved.</div>
     </footer>
   );
 }
