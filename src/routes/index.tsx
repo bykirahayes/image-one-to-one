@@ -8,7 +8,7 @@ import {
 import hero from "@/assets/hero-laptop-logo.jpg";
 import skyline from "@/assets/skyline.png";
 import logo from "@/assets/aspect-logo.png";
-import { SiteHeader, SiteFooter } from "@/components/site-chrome";
+import { SiteHeader } from "@/components/site-chrome";
 import { services, serviceGroups } from "@/lib/site-data";
 
 export const Route = createFileRoute("/")({
@@ -439,8 +439,6 @@ function Index() {
           </div>
         </div>
       </section>
-
-      <SiteFooter />
     </div>
   );
 }
