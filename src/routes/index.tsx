@@ -58,7 +58,13 @@ function Index() {
       <section className="relative isolate overflow-hidden">
         <img src={hero} alt="Laptop and headset on an office desk" className="absolute inset-y-0 right-0 -z-20 hidden h-full w-[68%] object-cover lg:block" />
         <div className="absolute inset-0 -z-10 hidden bg-gradient-to-r from-white via-white/95 to-white/10 lg:block" />
-        <img src={skyline} alt="" className="pointer-events-none absolute bottom-0 left-0 -z-10 hidden h-36 w-[68%] object-cover object-bottom opacity-15 lg:block" />
+        <img src={skyline} alt="" className="pointer-events-none absolute bottom-0 left-0 -z-10 hidden h-36 w-[72%] object-cover object-bottom opacity-25 lg:block" />
+        <div aria-hidden="true" className="pointer-events-none absolute bottom-0 right-0 -z-10 hidden h-32 w-[42%] lg:block">
+          <svg viewBox="0 0 620 180" preserveAspectRatio="none" className="h-full w-full fill-primary">
+            <path d="M620 0 C500 74 350 120 80 180 H0 C250 145 445 82 620 0Z" opacity=".16" />
+            <path d="M620 34 C500 100 370 143 180 180 H120 C330 138 480 90 620 34Z" opacity=".32" />
+          </svg>
+        </div>
         <div className="mx-auto max-w-7xl px-5 pb-20 pt-16 sm:px-8 sm:pb-28 lg:min-h-[590px] lg:pb-36 lg:pt-24">
           <p className="anim-fade-up text-xs font-bold tracking-[.22em] text-primary sm:text-sm">IT SUPPORT &amp; MANAGED SERVICES</p>
           <h1 className="anim-fade-up mt-5 max-w-4xl text-4xl font-extrabold leading-[1.12] text-[#25283a] sm:text-5xl lg:text-6xl">
@@ -110,8 +116,11 @@ function Index() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-[1500px] px-3 py-16 sm:px-6 sm:py-24">
-        <div className="mx-auto max-w-4xl text-center">
+      <section className="relative isolate mx-auto max-w-[1500px] overflow-hidden px-3 py-16 sm:px-6 sm:py-24">
+        <div aria-hidden="true" className="pointer-events-none absolute -right-20 top-8 hidden h-48 w-[38%] opacity-[.07] lg:block">
+          <svg viewBox="0 0 520 180" className="h-full w-full fill-primary"><path d="M520 0 C400 80 280 130 30 180 H0 C240 135 390 70 520 0Z" /><path d="M520 28 C410 100 300 145 110 180 H70 C260 140 410 80 520 28Z" /></svg>
+        </div>
+        <div className="relative mx-auto max-w-4xl text-center">
           <p className="text-xs font-bold tracking-[.2em] text-primary">EXPERIENCE YOU CAN RELY ON</p>
           <h2 className="mt-4 text-3xl font-extrabold leading-tight text-black sm:text-5xl">
             We have been supporting<br className="hidden sm:block" /> <span className="text-primary">businesses of all sizes</span> since 2003!
@@ -125,7 +134,8 @@ function Index() {
         </div>
         <div className="mt-16 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
           {values.map(({ icon: Icon, title, text, color }) => (
-            <article key={title} className={`min-h-[270px] rounded-2xl p-7 text-white shadow-sm transition hover:-translate-y-1 hover:shadow-xl sm:p-8 ${color}`}>
+            <article key={title} className={`relative min-h-[270px] overflow-hidden rounded-tl-[2.5rem] rounded-br-[2.5rem] p-7 text-white shadow-sm transition duration-300 hover:-translate-y-2 hover:shadow-xl sm:p-8 ${color}`}>
+              <span aria-hidden="true" className="pointer-events-none absolute -bottom-10 -right-10 h-36 w-36 rounded-full border-[18px] border-white/10" />
               <Icon className="h-16 w-16" strokeWidth={1.8} />
               <h3 className="mt-6 text-2xl font-extrabold uppercase">{title}</h3>
               <p className="mt-3 max-w-sm text-sm leading-6 text-white/95">{text}</p>
@@ -136,7 +146,8 @@ function Index() {
 
       <section className="px-3 pb-16 sm:px-6 sm:pb-24">
         <div className="mx-auto grid max-w-[1500px] gap-5 lg:grid-cols-2">
-          <div className="flex min-h-[440px] flex-col items-center justify-center rounded-2xl bg-[#e9e9e9] px-7 py-12 text-center sm:px-12">
+          <div className="relative isolate flex min-h-[440px] flex-col items-center justify-center overflow-hidden rounded-tl-[3rem] rounded-br-[3rem] bg-[#e9e9e9] px-7 py-12 text-center sm:px-12">
+            <span aria-hidden="true" className="pointer-events-none absolute -right-12 -top-12 h-48 w-48 rounded-full border-[22px] border-primary/10" />
             <MonitorCog className="h-14 w-14 text-primary" />
             <h2 className="mt-5 max-w-lg text-4xl font-extrabold uppercase leading-tight text-primary sm:text-5xl">Personalised<br />IT support</h2>
             <p className="mt-6 max-w-xl text-lg leading-8 text-slate-700 sm:text-xl">
@@ -146,7 +157,8 @@ function Index() {
               Tell us what you need <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
-          <div id="get-in-touch" className="rounded-2xl bg-[#e9e9e9] px-6 py-10 sm:px-10 sm:py-12">
+          <div id="get-in-touch" className="relative isolate overflow-hidden rounded-tl-[3rem] rounded-br-[3rem] bg-[#e9e9e9] px-6 py-10 sm:px-10 sm:py-12">
+            <span aria-hidden="true" className="pointer-events-none absolute -bottom-16 -left-12 h-48 w-48 rounded-full border-[22px] border-primary/10" />
             <h2 className="text-center text-4xl font-extrabold uppercase text-primary sm:text-5xl">Get in touch</h2>
             <p className="mx-auto mt-3 max-w-xl text-center text-sm leading-6 text-slate-600 sm:text-base">
               Tell us a little about your business and what you’re looking for. We’ll be happy to talk it through.
@@ -183,11 +195,12 @@ function Index() {
 
       <section className="px-3 py-10 sm:px-6 sm:py-16">
         <div className="mx-auto grid max-w-[1500px] gap-5 lg:grid-cols-2">
-          <div className="flex min-h-[330px] flex-col items-center justify-center rounded-2xl bg-[#e9e9e9] px-8 py-12 text-center">
+          <div className="relative isolate flex min-h-[330px] flex-col items-center justify-center overflow-hidden rounded-tl-[3rem] rounded-br-[3rem] bg-[#e9e9e9] px-8 py-12 text-center">
+            <span aria-hidden="true" className="pointer-events-none absolute -left-14 -top-14 h-44 w-44 rounded-full border-[20px] border-primary/10" />
             <h2 className="text-4xl font-extrabold uppercase leading-tight text-primary sm:text-5xl">Follow us on<br />social media</h2>
             <p className="mt-6 max-w-lg text-lg leading-8 text-slate-700">Keep up with company news, useful IT advice and the latest technology updates.</p>
           </div>
-          <div className="grid min-h-[330px] grid-cols-2 gap-5 rounded-2xl bg-[#e9e9e9] p-8 sm:p-10">
+          <div className="grid min-h-[330px] grid-cols-2 gap-5 rounded-tl-[3rem] rounded-br-[3rem] bg-[#e9e9e9] p-8 sm:p-10">
             {[{ name: "LinkedIn", Icon: Linkedin }, { name: "Facebook", Icon: Facebook }, { name: "Instagram", Icon: Instagram }, { name: "X", Icon: Twitter }].map(({ name, Icon }) => (
               <div key={name} className="flex flex-col items-center justify-center gap-3 text-[#163e70]">
                 <span className="grid h-24 w-24 place-items-center rounded-3xl bg-white shadow-sm sm:h-28 sm:w-28"><Icon className="h-14 w-14 sm:h-16 sm:w-16" /></span>
@@ -241,7 +254,7 @@ function Index() {
           <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
             {serviceColumns.map(({ title, icon: Icon, lines }) => (
               <div key={title} className="text-center">
-                <div className="mx-auto grid h-28 w-28 place-items-center rounded-3xl bg-primary text-white shadow-md transition hover:-translate-y-1"><Icon className="h-14 w-14" strokeWidth={1.6} /></div>
+                <div className="relative mx-auto grid h-28 w-28 place-items-center rounded-tl-[2rem] rounded-br-[2rem] bg-primary text-white shadow-lg transition duration-300 hover:-translate-y-2 hover:shadow-xl"><Icon className="h-14 w-14" strokeWidth={1.6} /><span aria-hidden="true" className="absolute -bottom-3 left-1/2 h-6 w-6 -translate-x-1/2 rotate-45 bg-primary" /></div>
                 <h3 className="mt-6 text-base font-extrabold uppercase text-black">{title}</h3>
                 <ul className="mt-5 space-y-4 text-sm text-slate-700">
                   {lines.map((line) => <li key={line}>{line}</li>)}
@@ -257,7 +270,7 @@ function Index() {
 
       <section className="px-3 py-10 sm:px-6 sm:py-16">
         <div className="mx-auto grid max-w-[1500px] gap-5 lg:grid-cols-2">
-          <div className="flex min-h-[360px] flex-col items-center justify-center rounded-2xl bg-[#f0f0f0] px-8 py-12 text-center">
+          <div className="relative isolate flex min-h-[360px] flex-col items-center justify-center overflow-hidden rounded-tl-[3rem] rounded-br-[3rem] bg-[#f0f0f0] px-8 py-12 text-center">
             <Globe2 className="h-14 w-14 text-primary" />
             <h2 className="mt-5 text-4xl font-extrabold uppercase text-primary">Contact us</h2>
             <div className="mt-8 space-y-4 text-sm text-slate-700">
@@ -267,7 +280,7 @@ function Index() {
             </div>
             <Link to="/contact" className="mt-7 inline-flex items-center gap-2 rounded-full bg-primary px-7 py-3 text-sm font-bold uppercase text-white">Contact our team <ArrowRight className="h-4 w-4" /></Link>
           </div>
-          <div className="flex min-h-[360px] flex-col items-center justify-center rounded-2xl bg-[#f0f0f0] px-8 py-12 text-center">
+          <div className="relative isolate flex min-h-[360px] flex-col items-center justify-center overflow-hidden rounded-tl-[3rem] rounded-br-[3rem] bg-[#f0f0f0] px-8 py-12 text-center">
             <Megaphone className="h-14 w-14 text-[#123c70]" />
             <h2 className="mt-5 text-4xl font-extrabold uppercase text-primary">Get a call back</h2>
             <p className="mt-3 text-sm text-slate-600">Fill in our contact form and let us know the best way to reach you.</p>
