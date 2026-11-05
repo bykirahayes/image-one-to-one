@@ -44,9 +44,9 @@ const supportHighlights = [
 function SupportHero({ summary }: { summary: string }) {
   return (
     <section className="relative isolate overflow-hidden bg-[#07172b] text-white">
-      <div aria-hidden="true" className="pointer-events-none absolute -left-20 -top-32 h-64 w-80 -rotate-12 rounded-br-[100%] bg-[#b90027]" />
-      <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_67%_45%,rgba(25,72,105,0.48),transparent_43%),linear-gradient(110deg,#061426_0%,#0b1d32_55%,#071426_100%)]" />
-      <div className="relative mx-auto grid max-w-7xl items-center gap-8 px-5 pb-20 pt-16 sm:px-8 sm:pb-24 sm:pt-20 lg:min-h-[440px] lg:grid-cols-[0.9fr_1.35fr_0.8fr] lg:gap-6 lg:py-16">
+      <div aria-hidden="true" className="pointer-events-none absolute -left-28 -top-36 h-64 w-[30rem] -rotate-[15deg] rounded-br-[100%] bg-gradient-to-br from-[#a80025] via-[#d50932] to-transparent opacity-90" />
+      <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_62%_42%,rgba(23,66,96,0.34),transparent_42%),linear-gradient(110deg,#061426_0%,#0b1d32_56%,#071426_100%)]" />
+      <div className="relative mx-auto grid max-w-7xl items-center gap-7 px-5 pb-16 pt-14 sm:px-8 sm:pb-20 sm:pt-16 lg:min-h-[430px] lg:grid-cols-[0.88fr_1.35fr_0.92fr] lg:gap-6 lg:py-14">
         <div className="relative z-10 max-w-xl">
           <p className="flex items-center gap-3 text-xs font-extrabold tracking-[0.22em] text-white/80 sm:text-sm">
             <span className="h-7 w-1.5 rounded-full bg-[#ed1236]" /> IT SERVICES
@@ -65,21 +65,22 @@ function SupportHero({ summary }: { summary: string }) {
           </div>
         </div>
 
-        <div className="relative mx-auto flex w-full max-w-[620px] items-center justify-center lg:scale-[1.04]">
+        <div className="relative mx-auto w-full max-w-[620px]">
+          <div aria-hidden="true" className="absolute -inset-[2px] rounded-[1.35rem] border border-[#ed1236]/70 shadow-[0_0_22px_rgba(237,19,54,0.28)]" />
           <img
             src="/images/it-support-workstation.webp"
             alt="Aspect IT workstation with dual monitors, support headset and red-lit equipment"
-            className="h-auto w-full rounded-2xl object-contain drop-shadow-[0_24px_45px_rgba(0,0,0,0.35)]"
+            className="relative h-auto w-full rounded-[1.25rem] object-contain"
             width="559"
             height="373"
             fetchPriority="high"
           />
         </div>
 
-        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-1">
+        <div className="grid gap-2.5 sm:grid-cols-2 lg:grid-cols-1">
           {supportHighlights.map(({ title, detail, Icon }) => (
-            <div key={title} className="flex items-center gap-3 rounded-2xl border border-white/20 bg-white/[0.07] p-3.5 shadow-lg backdrop-blur-md transition hover:border-red-400/60 hover:bg-white/[0.11]">
-              <span className="grid h-11 w-11 shrink-0 place-items-center rounded-full bg-gradient-to-br from-[#f21a42] to-[#97001e] shadow-lg shadow-red-950/40">
+            <div key={title} className="flex items-center gap-3 rounded-xl border border-white/20 bg-[#14283d]/85 px-3 py-3 shadow-sm transition hover:border-white/35 hover:bg-[#1a3048]">
+              <span className="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-[#c9002b] shadow-md shadow-red-950/30">
                 <Icon className="h-5 w-5 text-white" />
               </span>
               <span className="min-w-0">
@@ -90,10 +91,10 @@ function SupportHero({ summary }: { summary: string }) {
           ))}
         </div>
       </div>
-      <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 bottom-0 h-7 overflow-hidden">
+      <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 bottom-0 h-9 overflow-hidden">
         <svg viewBox="0 0 1600 50" preserveAspectRatio="none" className="h-full w-full">
-          <path d="M0 0C280 50 560 40 820 24S1300 0 1600 30V50H0Z" fill="#ed1236" />
-          <path d="M0 8C280 58 560 48 820 32S1300 8 1600 38" fill="none" stroke="#fff" strokeWidth="4" />
+          <path d="M0 0C270 46 520 42 790 27S1280 1 1600 28V50H0Z" fill="#e5092d" />
+          <path d="M0 7C270 53 520 49 790 34S1280 8 1600 35" fill="none" stroke="#fff" strokeWidth="3" />
         </svg>
       </div>
     </section>
