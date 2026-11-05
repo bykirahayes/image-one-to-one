@@ -381,23 +381,61 @@ function Index() {
         </div>
       </section>
 
-      <section className="final-contact px-3 py-10 sm:px-6 sm:py-16">
-        <div className="mx-auto grid max-w-[1500px] gap-5 lg:grid-cols-2">
-          <div className="relative isolate flex min-h-[360px] flex-col items-center justify-center overflow-hidden rounded-tl-[3rem] rounded-br-[3rem] bg-[#f0f0f0] px-8 py-12 text-center">
-            <Globe2 className="h-14 w-14 text-primary" />
-            <h2 className="mt-5 text-4xl font-extrabold uppercase text-primary">Contact us</h2>
-            <div className="mt-8 space-y-4 text-sm text-slate-700">
-              <p className="flex items-center justify-center gap-2 font-semibold"><Phone className="h-4 w-4 text-primary" /> 0161 241 9050</p>
-              <p className="flex items-center justify-center gap-2"><Mail className="h-4 w-4 text-primary" /> info@aspectit.co.uk</p>
-              <p className="flex items-center justify-center gap-2"><MapPin className="h-4 w-4 text-primary" /> County End Business Centre, Jackson Street, Springhead, Oldham OL4 4TZ</p>
+      <section className="final-contact relative isolate overflow-hidden bg-white px-4 py-16 sm:px-8 sm:py-20">
+        <svg aria-hidden="true" viewBox="0 0 1600 100" preserveAspectRatio="none" className="pointer-events-none absolute left-0 top-0 h-12 w-full">
+          <path d="M0 70C260 8 500 12 760 58S1240 100 1600 20" fill="none" stroke="#e5a0a8" strokeWidth="2" opacity=".65" />
+          <path d="M0 78C260 16 500 20 760 66S1240 108 1600 28" fill="none" stroke="#b20d26" strokeWidth="4" />
+        </svg>
+        <div className="relative mx-auto grid max-w-7xl gap-5 lg:grid-cols-2 lg:gap-6">
+          <div className="relative isolate overflow-hidden rounded-[2rem] border border-slate-200 bg-white px-7 py-9 shadow-[0_12px_35px_rgba(20,35,60,0.08)] sm:px-9 sm:py-10">
+            <div className="flex items-center gap-5">
+              <span className="grid h-16 w-16 shrink-0 place-items-center rounded-2xl bg-[#fff1f2] text-primary">
+                <Headset className="h-9 w-9" strokeWidth={1.8} />
+              </span>
+              <span className="h-14 w-1 rounded-full bg-primary" />
+              <div>
+                <h2 className="text-3xl font-extrabold uppercase tracking-tight text-[#17233f] sm:text-4xl">Contact <span className="text-primary">us</span></h2>
+                <p className="mt-1 text-sm leading-6 text-slate-600">Get in touch with our team for support, advice or a no-obligation chat.</p>
+              </div>
             </div>
-            <Link to="/contact" className="mt-7 inline-flex items-center gap-2 rounded-full bg-primary px-7 py-3 text-sm font-bold uppercase text-white">Contact our team <ArrowRight className="h-4 w-4" /></Link>
+            <div className="mt-7 grid gap-3.5 sm:pl-5">
+              <a href="tel:01612419050" className="flex items-center gap-4 text-base font-semibold text-[#17233f] transition hover:text-primary">
+                <span className="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-slate-50 text-primary"><Phone className="h-5 w-5" /></span>
+                0161 241 9050
+              </a>
+              <a href="mailto:info@aspectit.co.uk" className="flex items-center gap-4 text-base text-[#17233f] transition hover:text-primary">
+                <span className="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-slate-50 text-primary"><Mail className="h-5 w-5" /></span>
+                info@aspectit.co.uk
+              </a>
+              <div className="flex items-start gap-4 text-base leading-6 text-[#17233f]">
+                <span className="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-slate-50 text-primary"><MapPin className="h-5 w-5" /></span>
+                <span>County End Business Centre, Jackson Street, Springhead, Oldham OL4 4TZ</span>
+              </div>
+            </div>
+            <Link to="/contact" className="mt-7 inline-flex items-center gap-3 rounded-full bg-primary px-7 py-3.5 text-sm font-extrabold uppercase text-white transition hover:-translate-y-0.5 hover:bg-[#8f1028]">
+              Contact our team <ArrowRight className="h-4 w-4" />
+            </Link>
+            <svg aria-hidden="true" viewBox="0 0 500 100" preserveAspectRatio="none" className="pointer-events-none absolute bottom-0 right-0 h-16 w-2/5">
+              <path d="M500 0C390 62 250 90 0 100H500Z" fill="#b20d26" opacity=".09" />
+              <path d="M500 0C390 62 250 90 0 100" fill="none" stroke="#b20d26" strokeWidth="4" />
+            </svg>
           </div>
-          <div className="relative isolate flex min-h-[360px] flex-col items-center justify-center overflow-hidden rounded-tl-[3rem] rounded-br-[3rem] bg-[#f0f0f0] px-8 py-12 text-center">
-            <Megaphone className="h-14 w-14 text-[#123c70]" />
-            <h2 className="mt-5 text-4xl font-extrabold uppercase text-primary">Get a call back</h2>
-            <p className="mt-3 text-sm text-slate-600">Fill in our contact form and let us know the best way to reach you.</p>
-            <Link to="/contact" className="mt-7 inline-flex items-center gap-2 rounded-full bg-primary px-8 py-3 text-sm font-bold uppercase text-white">Request a call back <ArrowRight className="h-4 w-4" /></Link>
+          <div className="relative isolate overflow-hidden rounded-[2rem] border border-slate-200 bg-[#f7f8fa] px-7 py-9 shadow-[0_12px_35px_rgba(20,35,60,0.08)] sm:px-9 sm:py-10">
+            <div className="flex items-center gap-5">
+              <span className="grid h-16 w-16 shrink-0 place-items-center rounded-2xl bg-white text-primary shadow-sm">
+                <PhoneCall className="h-9 w-9" strokeWidth={1.8} />
+              </span>
+              <span className="h-14 w-1 rounded-full bg-primary" />
+              <h2 className="text-3xl font-extrabold uppercase leading-tight tracking-tight text-[#17233f] sm:text-4xl">Get a <span className="text-primary">call back</span></h2>
+            </div>
+            <p className="mt-8 max-w-xl text-base leading-7 text-slate-600">Fill in our contact form and let us know the best way to reach you. We’ll get back to you as soon as we can.</p>
+            <Link to="/contact" className="mt-8 inline-flex items-center gap-3 rounded-full border-2 border-primary bg-white px-7 py-3.5 text-sm font-extrabold uppercase text-primary transition hover:-translate-y-0.5 hover:bg-primary hover:text-white">
+              Request a call back <ArrowRight className="h-4 w-4" />
+            </Link>
+            <svg aria-hidden="true" viewBox="0 0 500 100" preserveAspectRatio="none" className="pointer-events-none absolute bottom-0 right-0 h-16 w-2/5">
+              <path d="M500 0C390 62 250 90 0 100H500Z" fill="#b20d26" opacity=".08" />
+              <path d="M500 0C390 62 250 90 0 100" fill="none" stroke="#ed3048" strokeWidth="4" />
+            </svg>
           </div>
         </div>
       </section>
